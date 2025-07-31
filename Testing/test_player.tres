@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="RacerConfig" load_steps=2 format=3 uid="uid://p01b1n7umx4q"]
+
+[ext_resource type="Script" uid="uid://8i5np0vgso3l" path="res://Gameplay/Core/racer_config.gd" id="1_a5kal"]
+
+[resource]
+script = ExtResource("1_a5kal")
+speed = 100.0
+metadata/_custom_type_script = "uid://8i5np0vgso3l"

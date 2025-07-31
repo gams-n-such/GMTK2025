@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6hbnr5mqtmq2"]
+
+[ext_resource type="Script" uid="uid://dnmej4xmciynl" path="res://Gameplay/Race/race_track.gd" id="1_bchk7"]
+
+[sub_resource type="Curve2D" id="Curve2D_5cui6"]
+
+[node name="RaceTrack" type="Path2D"]
+curve = SubResource("Curve2D_5cui6")
+script = ExtResource("1_bchk7")

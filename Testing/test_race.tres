@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="RaceConfig" load_steps=3 format=3 uid="uid://c5qotdv4p1y1d"]
+
+[ext_resource type="Script" uid="uid://cqrmf2l5iinyp" path="res://Gameplay/Core/race_config.gd" id="1_08443"]
+[ext_resource type="Resource" uid="uid://wc5dchweby5u" path="res://Testing/test_track.tres" id="2_hdvsc"]
+
+[resource]
+script = ExtResource("1_08443")
+num_laps = 1
+num_opponents = 0
+track = ExtResource("2_hdvsc")
+metadata/_custom_type_script = "uid://cqrmf2l5iinyp"

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6lowmpiueuwc"]
+
+[ext_resource type="Script" uid="uid://n2gg64sxefcg" path="res://Gameplay/Race/racer.gd" id="1_k27c1"]
+
+[node name="Racer" type="Node"]
+script = ExtResource("1_k27c1")

@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="TrackConfig" load_steps=2 format=3 uid="uid://wc5dchweby5u"]
+
+[ext_resource type="Script" uid="uid://dlq0x4c4ee1ka" path="res://Gameplay/Core/track_config.gd" id="1_5ljsj"]
+
+[resource]
+script = ExtResource("1_5ljsj")
+track_length = 100.0
+metadata/_custom_type_script = "uid://dlq0x4c4ee1ka"

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://1pgeprnsdwn6"]
+
+[ext_resource type="Script" uid="uid://bxcmj60hlbwkj" path="res://Gameplay/Race/race.gd" id="1_8knmq"]
+[ext_resource type="PackedScene" uid="uid://c6hbnr5mqtmq2" path="res://Gameplay/Race/race_track.tscn" id="2_4wokk"]
+
+[node name="Race" type="Node2D"]
+script = ExtResource("1_8knmq")
+
+[node name="RaceTrack" parent="." instance=ExtResource("2_4wokk")]
+unique_name_in_owner = true
