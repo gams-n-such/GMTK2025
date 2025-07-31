@@ -9,7 +9,7 @@ var length : float:
 		return config.track_length
 
 func _ready() -> void:
-	_cached_pit_length = pit_track.curve.get_baked_length() / curve.get_baked_length() * config.track_length
+	#_cached_pit_length = pit_track.curve.get_baked_length() / curve.get_baked_length() * config.track_length
 	_cached_pit_enter = calc_pit_enter_offset()
 	_cached_pit_exit = calc_pit_exit_offset()
 
