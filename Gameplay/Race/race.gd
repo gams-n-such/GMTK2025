@@ -85,6 +85,8 @@ func on_racer_lap_finished(racer: Racer, lap_number: int) -> void:
 func end_race() -> void:
 	print("Race finished")
 	track.process_mode = Node.PROCESS_MODE_DISABLED
+	# TODO: move to Game class
+	# TODO: detect win/lose
 	var game_over_screen = game_over_scene.instantiate()
 	get_tree().root.add_child(game_over_screen)
 
