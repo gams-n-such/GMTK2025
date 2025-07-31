@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://pmxljarxewf6" path="res://Gameplay/Race/game_over_screen.gd" id="1_3oopu"]
 
 [node name="GameOverScreen" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

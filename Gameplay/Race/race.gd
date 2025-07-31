@@ -95,7 +95,7 @@ func end_race() -> void:
 	# TODO: detect win/lose
 	var game_over_screen = game_over_scene.instantiate()
 	game_over_screen.player_won = get_player_position_on_track() == 1
-	get_tree().root.add_child(game_over_screen)
+	%UI.add_child(game_over_screen)
 
 
 func get_player_position_on_track() -> int:
