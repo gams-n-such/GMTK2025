@@ -1,6 +1,12 @@
 class_name Racer
 extends Node
 
+enum RACER_ATTRIBUTES {
+	HEALTH,
+	MAX_HEALTH,
+	SPEED
+}
+
 signal lap_finished(racer: Racer, lap_number: int)
 
 @export var config : RacerConfig
