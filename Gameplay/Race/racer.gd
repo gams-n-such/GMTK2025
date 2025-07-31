@@ -57,6 +57,14 @@ func increment_lap() -> void:
 
 #region Pit Stop
 
+var heading_for_pit : bool = false
+
+func wants_pit_stop() -> bool:
+	return heading_for_pit
+
+func schedule_pit_stop() -> void:
+	heading_for_pit = true
+
 # HACK: this is temp code for pit stop prototype
 var is_repaired : bool = false
 var repair_time : float = 3.0
