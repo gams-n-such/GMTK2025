@@ -36,3 +36,19 @@ func start_race(config: RaceConfig) -> void:
 		return
 	queued_race_config = config
 	get_tree().change_scene_to_packed(race_scene)
+
+#region Pause
+
+func is_paused() -> bool:
+	return get_tree().paused
+
+func pause() -> void:
+	get_tree().paused = true
+
+func unpause() -> void:
+	get_tree().paused = false
+
+func toggle_pause() -> void:
+	get_tree().paused = not is_paused()
+
+#endregion
