@@ -17,6 +17,7 @@ instance_dock/preview_resolution=Vector2i(64, 64)
 
 config/name="GMTK2025"
 config/tags=PackedStringArray("jams")
+run/main_scene="uid://b3f8qjo8fpxfn"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 

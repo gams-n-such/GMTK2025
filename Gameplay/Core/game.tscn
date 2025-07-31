@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://yssyuhsiexg"]
+[gd_scene load_steps=4 format=3 uid="uid://yssyuhsiexg"]
 
 [ext_resource type="Script" uid="uid://citqw3d6a765m" path="res://Gameplay/Core/game.gd" id="1_tnixw"]
+[ext_resource type="Resource" uid="uid://p01b1n7umx4q" path="res://Testing/test_player.tres" id="2_kbos6"]
+[ext_resource type="Resource" uid="uid://c5qotdv4p1y1d" path="res://Testing/test_race.tres" id="3_xactu"]
 
 [node name="Game" type="Node"]
 script = ExtResource("1_tnixw")
+player_config = ExtResource("2_kbos6")
+test_race = ExtResource("3_xactu")

@@ -10,11 +10,19 @@ var current_lap : int = 1
 
 var speed : float:
 	get:
+		# TODO: dynamic speed attribute
 		return config.speed
 
 var track : RaceTrack:
 	get:
 		return Game.race.track
+
+func is_on_track() -> bool:
+	return get_parent() == track
+
+func is_in_the_pit() -> bool:
+	# HACK:
+	return not is_on_track()
 
 func _ready() -> void:
 	pass
