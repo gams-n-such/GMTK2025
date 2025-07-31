@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://c6hbnr5mqtmq2"]
+[gd_scene load_steps=4 format=3 uid="uid://c6hbnr5mqtmq2"]
 
 [ext_resource type="Script" uid="uid://dnmej4xmciynl" path="res://Gameplay/Race/race_track.gd" id="1_bchk7"]
 
@@ -8,6 +8,12 @@ _data = {
 }
 point_count = 8
 
+[sub_resource type="Curve2D" id="Curve2D_ecpwx"]
+
 [node name="RaceTrack" type="Path2D"]
 curve = SubResource("Curve2D_5cui6")
 script = ExtResource("1_bchk7")
+
+[node name="PitTrack" type="Path2D" parent="."]
+unique_name_in_owner = true
+curve = SubResource("Curve2D_ecpwx")

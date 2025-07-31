@@ -22,9 +22,9 @@ func _ready() -> void:
 	prepare_race()
 	# TODO: add pre-race scene
 	
-	# TODO: encapsulate countdown in a separate scene
-	countdown_timer.start()
-	await countdown_timer.timeout
+	var countdown = countdown_scene.instantiate()
+	%UI.add_child(countdown)
+	await countdown.finished
 	
 	start_race()
 
@@ -73,7 +73,7 @@ func spawn_racer(config: RacerConfig) -> Racer:
 
 #region Countdown
 
-@onready var countdown_timer : Timer = %CountdownTimer
+var countdown_scene : PackedScene = preload("res://Gameplay/Race/countdown.tscn")
 
 #endregion
 
@@ -95,7 +95,7 @@ func end_race() -> void:
 	# TODO: detect win/lose
 	var game_over_screen = game_over_scene.instantiate()
 	game_over_screen.player_won = get_player_position_on_track() == 1
-	get_tree().root.add_child(game_over_screen)
+	%UI.add_child(game_over_screen)
 
 func get_player_position_on_track() -> int:
 	return racers.reduce(func(accum: int, racer: Racer) -> int:
