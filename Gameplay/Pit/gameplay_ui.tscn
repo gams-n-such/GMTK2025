@@ -13,7 +13,8 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_tnax6")
 
-[node name="TabContainer" type="TabContainer" parent="."]
+[node name="ScreenSelector" type="TabContainer" parent="."]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -24,13 +25,13 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_c7px1")
 current_tab = 1
 tabs_visible = false
 
-[node name="RacingScreen" type="Control" parent="TabContainer"]
+[node name="RacingScreen" type="Control" parent="ScreenSelector"]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
-[node name="PitStartButton" type="Button" parent="TabContainer/RacingScreen"]
+[node name="PitStartButton" type="Button" parent="ScreenSelector/RacingScreen"]
 custom_minimum_size = Vector2(120, 60)
 layout_mode = 1
 anchors_preset = 6
@@ -47,12 +48,12 @@ theme_override_font_sizes/font_size = 32
 text = "Request
 pit-stop"
 
-[node name="PitScreen" type="Control" parent="TabContainer"]
+[node name="PitScreen" type="Control" parent="ScreenSelector"]
 unique_name_in_owner = true
 layout_mode = 2
 metadata/_tab_index = 1
 
-[node name="RepairButton" type="Button" parent="TabContainer/PitScreen"]
+[node name="RepairButton" type="Button" parent="ScreenSelector/PitScreen"]
 custom_minimum_size = Vector2(120, 60)
 layout_mode = 1
 anchors_preset = 8
@@ -69,7 +70,8 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 32
 text = "Repair"
 
-[node name="PitEndButton" type="Button" parent="TabContainer/PitScreen"]
+[node name="PitEndButton" type="Button" parent="ScreenSelector/PitScreen"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(120, 60)
 layout_mode = 1
 anchors_preset = 6
@@ -85,3 +87,7 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 32
 text = "End
 pit-stop"
+
+[connection signal="pressed" from="ScreenSelector/RacingScreen/PitStartButton" to="." method="_on_pit_start_button_pressed"]
+[connection signal="pressed" from="ScreenSelector/PitScreen/RepairButton" to="." method="_on_repair_button_pressed"]
+[connection signal="pressed" from="ScreenSelector/PitScreen/PitEndButton" to="." method="_on_pit_end_button_pressed"]

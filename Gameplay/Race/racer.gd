@@ -50,3 +50,20 @@ func increment_lap() -> void:
 	var finished_lap := current_lap
 	current_lap += 1
 	lap_finished.emit(self, finished_lap)
+
+#region Pit Stop
+
+# HACK: this is temp code for pit stop prototype
+var is_repaired : bool = false
+var repair_time : float = 3.0
+
+func repair() -> void:
+	if is_repaired:
+		return
+	await get_tree().create_timer(repair_time).timeout
+	is_repaired = true
+
+func damage() -> void:
+	is_repaired = false
+
+#endregion
