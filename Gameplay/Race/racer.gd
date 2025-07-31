@@ -39,15 +39,38 @@ func _process(delta: float) -> void:
 	process_movement(delta)
 
 func process_movement(delta: float) -> void:
-	var old_distance := current_lap_distance
-	current_lap_distance += speed * delta
+	var old_distance: float
+	if is_in_pit_lane():
+		old_distance = current_pit_track_distance
+		current_pit_track_distance += track.pit_speed * delta
+		if old_distance < track.pit_length/2 and track.pit_length/2 < current_pit_track_distance:
+			in_pit.emit()
+	else: 
+		old_distance = current_lap_distance
+		current_lap_distance += speed * delta
 	
 	while current_lap_distance > track.length:
 		current_lap_distance -= track.length
 		increment_lap()
 	
 	# TODO: move along path
-	set_progress_ratio(current_lap_distance / Game.race.track.length)
+	if wants_pit_stop():
+		var pit_entry_lap_distance := track.curve.get_closest_offset(track.curve.get_point_position(track.pit_entry_idx)) / track.curve.get_baked_length() * track.length
+		if old_distance <= pit_entry_lap_distance and pit_entry_lap_distance <= current_lap_distance:
+			var distance_to_pit_entry := pit_entry_lap_distance - old_distance
+			var delta_in_pit := delta - distance_to_pit_entry / speed
+			
+			transition_to_pit_track(delta_in_pit)
+	
+	if is_in_pit_lane() and current_pit_track_distance > track.pit_length:
+		var delta_in_track := (current_pit_track_distance - track.pit_length) / track.pit_speed
+		
+		transition_from_pit_track(delta_in_track)
+	
+	if is_in_pit_lane():
+		set_progress_ratio(current_pit_track_distance / track.pit_length)
+	else:
+		set_progress_ratio(current_lap_distance / track.length)
 
 func increment_lap() -> void:
 	var finished_lap := current_lap
@@ -56,14 +79,41 @@ func increment_lap() -> void:
 	print("lap ", current_lap)
 
 #region Pit Stop
-
+var current_pit_track_distance: float = 0.0
 var heading_for_pit : bool = false
+var in_pit_lane: bool = false
+
+signal in_pit
 
 func wants_pit_stop() -> bool:
 	return heading_for_pit
 
+func is_in_pit_lane() -> bool:
+	return in_pit_lane
+
 func schedule_pit_stop() -> void:
-	heading_for_pit = true
+	if (not in_pit_lane):
+		heading_for_pit = true
+
+func transition_to_pit_track(delta: float) -> void:
+	heading_for_pit = false
+	in_pit_lane = true
+	
+	current_pit_track_distance = delta * track.pit_speed
+	
+	reparent(track.pit_track)
+	
+	set_progress_ratio(current_pit_track_distance / track.pit_length)
+
+func transition_from_pit_track(delta: float) -> void:
+	in_pit_lane = false
+	
+	current_lap_distance = track.curve.get_closest_offset(track.curve.get_point_position(track.pit_exit_idx)) / track.curve.get_baked_length() * track.length
+	current_lap_distance += delta * speed
+	
+	reparent(Game.race.track)
+	
+	set_progress_ratio(current_lap_distance / track.length)
 
 # HACK: this is temp code for pit stop prototype
 var is_repaired : bool = false

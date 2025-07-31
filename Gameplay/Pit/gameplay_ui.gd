@@ -12,7 +12,6 @@ func _process(delta: float) -> void:
 func enter_race_mode() -> void:
 	%RacingScreen.visible = true
 
-
 func _unhandled_input(event: InputEvent) -> void:
 	# TODO: don't use built-in action?
 	if event.is_action_pressed("pause"):
@@ -21,13 +20,14 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _on_pit_start_button_pressed() -> void:
 	# TODO: wait until racer reaches the pit
-	enter_pit_mode()
+	Game.player.schedule_pit_stop()
 
 func _on_pit_end_button_pressed() -> void:
 	exit_pit_mode()
 
 func enter_pit_mode() -> void:
 	Game.player.process_mode = Node.PROCESS_MODE_DISABLED
+	
 	%PitScreen.visible = true
 	%PitEndButton.disabled = true
 

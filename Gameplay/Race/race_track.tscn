@@ -4,11 +4,15 @@
 
 [sub_resource type="Curve2D" id="Curve2D_5cui6"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 162, 266, 0, 0, 0, 0, 263, 380, 0, 0, 0, 0, 649, 415, 0, 0, 0, 0, 950, 228, 0, 0, 0, 0, 947, 53, 0, 0, 0, 0, 281, 79, 0, 0, 0, 0, 191, 173, 0, 0, 0, 0, 162, 266)
+"points": PackedVector2Array(0, 0, 0, 0, 162, 266, 0, 0, 0, 0, 263, 381, 0, 0, 0, 0, 649, 415, 0, 0, 0, 0, 950, 228, 0, 0, 0, 0, 947, 53, 0, 0, 0, 0, 281, 79, 0, 0, 0, 0, 191, 173, 0, 0, 0, 0, 162, 266)
 }
 point_count = 8
 
 [sub_resource type="Curve2D" id="Curve2D_ecpwx"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 292, 477, 0, 0, 0, 0, 633, 456)
+}
+point_count = 2
 
 [node name="RaceTrack" type="Path2D"]
 curve = SubResource("Curve2D_5cui6")

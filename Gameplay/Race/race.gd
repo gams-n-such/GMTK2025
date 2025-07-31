@@ -59,6 +59,7 @@ func generate_random_racer() -> RacerConfig:
 func spawn_player() -> Racer:
 	var new_racer : Racer = spawn_racer(Game.player_config)
 	Game.player = new_racer
+	Game.player.in_pit.connect(%GameplayUI.enter_pit_mode)
 	return new_racer
 
 func spawn_racer(config: RacerConfig) -> Racer:

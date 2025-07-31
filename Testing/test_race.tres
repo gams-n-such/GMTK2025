@@ -6,6 +6,6 @@
 [resource]
 script = ExtResource("1_08443")
 num_laps = 2
-num_opponents = 3
+num_opponents = 0
 track = ExtResource("2_hdvsc")
 metadata/_custom_type_script = "uid://cqrmf2l5iinyp"
