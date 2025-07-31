@@ -22,9 +22,9 @@ func _ready() -> void:
 	prepare_race()
 	# TODO: add pre-race scene
 	
-	# TODO: encapsulate countdown in a separate scene
-	countdown_timer.start()
-	await countdown_timer.timeout
+	var countdown = countdown_scene.instantiate()
+	%UI.add_child(countdown)
+	await countdown.finished
 	
 	start_race()
 
@@ -73,7 +73,7 @@ func spawn_racer(config: RacerConfig) -> Racer:
 
 #region Countdown
 
-@onready var countdown_timer : Timer = %CountdownTimer
+var countdown_scene : PackedScene = preload("res://Gameplay/Race/countdown.tscn")
 
 #endregion
 

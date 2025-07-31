@@ -13,11 +13,6 @@ config = ExtResource("2_b3jxk")
 unique_name_in_owner = true
 process_mode = 4
 
-[node name="CountdownTimer" type="Timer" parent="."]
-unique_name_in_owner = true
-wait_time = 3.0
-one_shot = true
-
 [node name="UI" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
 
