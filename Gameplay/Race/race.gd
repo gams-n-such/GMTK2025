@@ -49,8 +49,12 @@ func generate_random_racers(num_racers: int) -> Array[RacerConfig]:
 
 func generate_random_racer() -> RacerConfig:
 	# TODO: implement
-	push_error("Race.generate_random_racer() is not implemented")
-	return RacerConfig.new()
+	var result_config := RacerConfig.new()
+	
+	result_config.speed = randfn(Game.player.speed, 0.5)
+	print(result_config.speed)
+	
+	return result_config
 
 func spawn_player() -> Racer:
 	var new_racer : Racer = spawn_racer(Game.player_config)
@@ -79,15 +83,31 @@ func start_race() -> void:
 	track.process_mode = Node.PROCESS_MODE_INHERIT
 
 func on_racer_lap_finished(racer: Racer, lap_number: int) -> void:
-	if lap_number == config.num_laps:
+	if lap_number == config.num_laps and racer == Game.player:
 		end_race()
 
 func end_race() -> void:
+	# TODO: remove on release 
 	print("Race finished")
+	print("Player finished in ", get_player_position_on_track(), " place")
 	track.process_mode = Node.PROCESS_MODE_DISABLED
 	# TODO: move to Game class
 	# TODO: detect win/lose
 	var game_over_screen = game_over_scene.instantiate()
+	game_over_screen.player_won = get_player_position_on_track() == 1
 	get_tree().root.add_child(game_over_screen)
+
+
+func get_player_position_on_track() -> int:
+	return racers.reduce(func(accum: int, racer: Racer) -> int:
+		if Game.player == racer:
+			return accum + 1
+		if Game.player.current_lap < racer.current_lap:
+			return accum + 1
+		elif Game.player.current_lap == racer.current_lap and Game.player.current_lap_distance < racer.current_lap_distance:
+			return accum + 1
+		else:
+			return accum
+	, 0)
 
 #endregion

@@ -3,6 +3,10 @@
 [ext_resource type="Script" uid="uid://dnmej4xmciynl" path="res://Gameplay/Race/race_track.gd" id="1_bchk7"]
 
 [sub_resource type="Curve2D" id="Curve2D_5cui6"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 162, 266, 0, 0, 0, 0, 263, 380, 0, 0, 0, 0, 649, 415, 0, 0, 0, 0, 950, 228, 0, 0, 0, 0, 947, 53, 0, 0, 0, 0, 281, 79, 0, 0, 0, 0, 191, 173, 0, 0, 0, 0, 162, 266)
+}
+point_count = 8
 
 [node name="RaceTrack" type="Path2D"]
 curve = SubResource("Curve2D_5cui6")

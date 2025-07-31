@@ -1,5 +1,5 @@
 class_name Racer
-extends Node
+extends PathFollow2D
 
 signal lap_finished(racer: Racer, lap_number: int)
 
@@ -25,6 +25,8 @@ func is_in_the_pit() -> bool:
 	return not is_on_track()
 
 func _ready() -> void:
+	set_loop(true)
+	set_rotates(true)
 	pass
 
 func _process(delta: float) -> void:
@@ -39,8 +41,10 @@ func process_movement(delta: float) -> void:
 		increment_lap()
 	
 	# TODO: move along path
+	set_progress_ratio(current_lap_distance / Game.race.track.length)
 
 func increment_lap() -> void:
 	var finished_lap := current_lap
 	current_lap += 1
 	lap_finished.emit(self, finished_lap)
+	print("lap ", current_lap)
