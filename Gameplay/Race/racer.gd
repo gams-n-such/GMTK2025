@@ -92,7 +92,10 @@ func increment_lap() -> void:
 	var finished_lap := current_lap
 	current_lap += 1
 	lap_finished.emit(self, finished_lap)
-	print("lap ", current_lap)
+	var msg: Message = Message.new()
+	msg.description = str("lap ", current_lap)
+	Game.message_system.send_message(msg)
+	#print("lap ", current_lap)
 
 #region Pit Stop
 var current_pit_track_distance: float = 0.0
@@ -102,9 +105,6 @@ signal in_pit
 
 func wants_pit_stop() -> bool:
 	return heading_for_pit
-
-func is_in_pit_lane() -> bool:
-	return current_state == RacerState.PIT_LANE
 
 func schedule_pit_stop() -> void:
 	if (current_state == RacerState.RACE):

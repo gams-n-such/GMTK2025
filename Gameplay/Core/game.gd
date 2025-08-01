@@ -14,13 +14,14 @@ var race : Race
 # HACK: just so we can use change_scene_to_packed()
 var queued_race_config : RaceConfig
 var player : Racer
-
+var message_system: MessageSystem = MessageSystem.new()
 
 func _ready() -> void:
 	pass # Replace with function body.
 
 
 func _process(delta: float) -> void:
+	message_system.dispatch()
 	pass
 
 func return_to_main_menu() -> void:
