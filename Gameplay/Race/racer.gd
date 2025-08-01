@@ -15,6 +15,7 @@ enum RacerState {
 
 signal lap_finished(racer: Racer, lap_number: int)
 
+@export var id : RacerId
 @export var config : RacerConfig
 
 var current_state: = RacerState.RACE
@@ -51,7 +52,7 @@ func _process(delta: float) -> void:
 		RacerState.PIT_STOP:
 			process_PIT_STOP(delta)
 		_:
-			push_error("Unreachable state")
+			push_error("Unreachable racer state")
 
 func process_RACE(delta: float) -> void:
 	var old_distance := current_lap_distance
