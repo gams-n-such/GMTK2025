@@ -93,7 +93,6 @@ func end_race() -> void:
 	print("Player finished in ", get_player_position_on_track(), " place")
 	track.process_mode = Node.PROCESS_MODE_DISABLED
 	# TODO: move to Game class
-	# TODO: detect win/lose
 	var game_over_screen = game_over_scene.instantiate()
 	game_over_screen.player_won = get_player_position_on_track() == 1
 	%UI.add_child(game_over_screen)
@@ -102,12 +101,11 @@ func get_player_position_on_track() -> int:
 	return racers.reduce(func(accum: int, racer: Racer) -> int:
 		if Game.player == racer:
 			return accum + 1
-		if Game.player.current_lap < racer.current_lap:
-			return accum + 1
-		elif Game.player.current_lap == racer.current_lap and Game.player.current_lap_distance < racer.current_lap_distance:
-			return accum + 1
-		else:
-			return accum
+		
+		var overall_player_distance: float = Game.player.current_lap * Game.race.track.length + Game.player.current_lap_distance
+		var overall_racer_distance: float = racer.current_lap * Game.race.track.length + racer.current_lap_distance
+		
+		return accum + 1 if overall_racer_distance > overall_player_distance else accum
 	, 0)
 
 #endregion
