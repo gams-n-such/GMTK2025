@@ -15,6 +15,7 @@ enum RacerState {
 
 signal lap_finished(racer: Racer, lap_number: int)
 
+@export var id : RacerId
 @export var config : RacerConfig
 
 var current_state: = RacerState.RACE
@@ -64,8 +65,8 @@ func is_in_the_pit() -> bool:
 	return not is_on_track()
 
 func _ready() -> void:
-	set_loop(true)
-	set_rotates(true)
+	# HACK: use sprite
+	$TempVisual.color = id.color
 	pass
 
 func _process(delta: float) -> void:
@@ -78,7 +79,7 @@ func _process(delta: float) -> void:
 		RacerState.PIT_STOP:
 			process_PIT_STOP(delta)
 		_:
-			push_error("Unreachable state")
+			push_error("Unreachable racer state")
 
 func update_hp(delta: float) -> void:
 	var critical_damage: bool = false

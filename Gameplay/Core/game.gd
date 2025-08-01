@@ -6,6 +6,7 @@ extends Node
 
 
 @export_category("Game")
+@export var player_id : RacerId
 @export var player_config : RacerConfig
 # TODO: remove
 @export var test_race : RaceConfig

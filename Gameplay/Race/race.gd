@@ -32,11 +32,14 @@ func prepare_race() -> void:
 	
 	spawn_player()
 	
-	var enemy_configs := generate_random_racers(config.num_opponents)
-	for enemy_config in enemy_configs:
-		spawn_racer(enemy_config)
+	for racer_idx in range(config.num_opponents):
+		# TODO: ensure unique IDs for racers
+		spawn_racer(get_random_racer_id(), generate_random_racer())
 
 #region Racers
+
+@export_category("Racers")
+@export var random_racers : Array[RacerId]
 
 var racers : Array[Racer]
 
@@ -51,18 +54,23 @@ func generate_random_racer() -> RacerConfig:
 	var result_config := RacerConfig.new()
 	
 	result_config.speed = randfn(Game.player.speed, 0.5)
-	print(result_config.speed)
 	
 	return result_config
 
+func get_random_racer_id() -> RacerId:
+	# TODO: ensure unique IDs for racers
+	return random_racers.pick_random()
+
 func spawn_player() -> Racer:
-	var new_racer : Racer = spawn_racer(Game.player_config)
+	var new_racer : Racer = spawn_racer(Game.player_id, Game.player_config)
 	Game.player = new_racer
 	Game.player.in_pit.connect(%GameplayUI.enter_pit_mode)
+	new_racer.z_index = 1
 	return new_racer
 
-func spawn_racer(config: RacerConfig) -> Racer:
+func spawn_racer(id : RacerId, config: RacerConfig) -> Racer:
 	var new_racer : Racer = racer_scene.instantiate()
+	new_racer.id = id
 	new_racer.config = config
 	new_racer.lap_finished.connect(on_racer_lap_finished)
 	racers.append(new_racer)
