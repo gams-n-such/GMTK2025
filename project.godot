@@ -25,6 +25,10 @@ config/icon="res://icon.svg"
 
 Game="*res://Gameplay/Core/game.tscn"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/Todo_Manager/plugin.cfg", "res://addons/explore-editor-theme/plugin.cfg", "res://addons/time-tracker/plugin.cfg")
