@@ -9,7 +9,6 @@ var length : float:
 		return config.track_length
 
 func _ready() -> void:
-	pass
 	attach_pit_to_track()
 
 func _process(delta: float) -> void:
