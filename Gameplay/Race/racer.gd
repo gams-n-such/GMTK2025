@@ -39,8 +39,8 @@ func is_in_the_pit() -> bool:
 	return not is_on_track()
 
 func _ready() -> void:
-	set_loop(true)
-	set_rotates(true)
+	# HACK: use sprite
+	$TempVisual.color = id.color
 	pass
 
 func _process(delta: float) -> void:
