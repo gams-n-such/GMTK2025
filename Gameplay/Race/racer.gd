@@ -20,15 +20,41 @@ signal lap_finished(racer: Racer, lap_number: int)
 var current_state: = RacerState.RACE
 var current_lap_distance : float = 0.0
 var current_lap : int = 1
+var decay_factor: float = 1.0
 
 var speed : float:
 	get:
 		# TODO: dynamic speed attribute
 		return config.speed
 
+var limp_speed: float:
+	get:
+		return config.limp_speed
+
 var track : RaceTrack:
 	get:
 		return Game.race.track
+
+var rider_hp: float:
+	get:
+		return config.hp_arr[config.HPType.RIDER]
+
+var pony_hp: float:
+	get:
+		return config.hp_arr[config.HPType.PONY]
+
+var chariot_hp: float:
+	get:
+		return config.hp_arr[config.HPType.CHARIOT]
+
+var wheels_hp: float:
+	get:
+		return config.hp_arr[config.HPType.WHEELS]
+
+var horseshoe_hp: float:
+	get:
+		return config.hp_arr[config.HPType.HORSESHOE]
+
 
 func is_on_track() -> bool:
 	return get_parent() == track
@@ -45,6 +71,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	match current_state:
 		RacerState.RACE:
+			update_hp(delta)
 			process_RACE(delta)
 		RacerState.PIT_LANE:
 			process_PIT_LANE(delta)
@@ -53,9 +80,25 @@ func _process(delta: float) -> void:
 		_:
 			push_error("Unreachable state")
 
+func update_hp(delta: float) -> void:
+	var critical_damage: bool = false
+	decay_factor = 0.0
+	
+	for i in config.hp_arr.size():
+		config.hp_arr[i] -= config.hp_decay_speed_arr[i] * delta
+		decay_factor += config.hp_arr[i]
+		if (config.hp_arr[i] <= 0.0):
+			critical_damage = true
+			config.hp_arr[i] = 0.0
+	
+	if (critical_damage):
+		decay_factor = 0.0
+	else:
+		decay_factor /= config.hp_arr.size() * 100.0
+
 func process_RACE(delta: float) -> void:
 	var old_distance := current_lap_distance
-	current_lap_distance += speed * delta
+	current_lap_distance += maxf(speed * decay_factor, limp_speed) * delta
 	set_progress_ratio(current_lap_distance / track.length)
 	
 	while current_lap_distance > track.length:
@@ -122,7 +165,7 @@ func transition_to_pit_track(delta: float) -> void:
 func transition_from_pit_track(delta: float) -> void:
 	current_state = RacerState.RACE
 	
-	reparent(Game.race.track)
+	reparent(track)
 	
 	current_lap_distance = track.curve.get_closest_offset(track.curve.get_point_position(track.pit_exit_idx)) / track.curve.get_baked_length() * track.length
 	process_RACE(delta)

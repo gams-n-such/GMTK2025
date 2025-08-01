@@ -8,7 +8,6 @@ extends Node
 @export var racer_scene : PackedScene = preload("res://Gameplay/Race/racer.tscn")
 @export var game_over_scene : PackedScene = preload("res://Gameplay/Race/game_over_screen.tscn")
 
-
 var track : RaceTrack:
 	get:
 		return %RaceTrack
