@@ -179,8 +179,6 @@ func end_pit_stop() -> void:
 	current_state = RacerState.PIT_LANE
 
 # HACK: this is temp code for pit stop prototype
-
-
 func repair(part: Enum.RACER_PART, val: float) -> void:
 	_cached_parts[part].durability.add_instant(val)
 

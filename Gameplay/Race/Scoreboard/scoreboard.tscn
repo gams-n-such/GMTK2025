@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://cthpsdcu6wi7i"]
+
+[ext_resource type="Script" uid="uid://daapxp4yk6bi2" path="res://Gameplay/Race/Scoreboard/scoreboard.gd" id="1_314yk"]
+[ext_resource type="PackedScene" uid="uid://frwc8vikeeds" path="res://Gameplay/Race/Scoreboard/scoreboard_row.tscn" id="2_gnx0w"]
+
+[node name="Scoreboard" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_314yk")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 10
+
+[node name="ScoreboardRow" parent="VBoxContainer" instance=ExtResource("2_gnx0w")]
+layout_mode = 2

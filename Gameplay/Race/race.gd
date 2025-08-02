@@ -103,4 +103,15 @@ func get_player_position_on_track() -> int:
 		return accum + 1 if overall_racer_distance > overall_player_distance else accum
 	, 0)
 
+func sort_racers() -> void:
+	racers.sort_custom(func(left: Racer, right: Racer) -> bool:
+		var left_distance: float = left.current_lap * Game.race.track.length + left.current_lap_distance
+		var right_distance: float = right.current_lap * Game.race.track.length + right.current_lap_distance
+		return left_distance > right_distance
+		)
+
+func _process(delta: float) -> void:
+	sort_racers()
+	%Scoreboard.update(racers)
+
 #endregion

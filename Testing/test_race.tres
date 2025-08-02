@@ -31,7 +31,7 @@ parts_durability = Dictionary[int, float]({
 4: 100.0
 })
 parts_decay_speed = Dictionary[int, float]({
-0: 0.5,
+0: 0.6,
 1: 0.7,
 2: 1.0,
 3: 1.5,

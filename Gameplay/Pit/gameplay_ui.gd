@@ -29,7 +29,7 @@ func on_game_ended(completed: bool, part: Enum.RACER_PART) -> void:
 	#else:
 		#print("gave up ", Enum.RACER_PART.keys()[part])
 		#
-	
+
 
 func _process(delta: float) -> void:
 	pass
