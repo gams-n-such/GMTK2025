@@ -127,7 +127,7 @@ func process_PIT_LANE(delta: float) -> void:
 		
 	if old_distance < track.pit_length/2 and track.pit_length/2 <= current_pit_track_distance:
 		# TODO: pitstop transition
-		#current_state = RacerState.PIT_STOP
+		current_state = RacerState.PIT_STOP
 		in_pit.emit()
 	
 	if current_pit_track_distance > track.pit_length:
@@ -175,22 +175,12 @@ func transition_from_pit_track(delta: float) -> void:
 	current_lap_distance = track.curve.get_closest_offset(track.curve.get_point_position(track.pit_exit_idx)) / track.curve.get_baked_length() * track.length
 	process_RACE(delta)
 
+func end_pit_stop() -> void:
+	current_state = RacerState.PIT_LANE
+
 # HACK: this is temp code for pit stop prototype
-var repair_time : float = 3.0
 
-func has_damaged_parts() -> bool:
-	for part in all_parts:
-		if part.durability.value < part.durability.max_value:
-			return true
-	return false
-
-func repair() -> void:
-	if not has_damaged_parts():
-		return
-	await get_tree().create_timer(repair_time).timeout
-
-func damage() -> void:
-	for part in all_parts:
-		part.repair()
+func repair(part: Enum.RACER_PART, val: float) -> void:
+	_cached_parts[part].durability.add_instant(val)
 
 #endregion

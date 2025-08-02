@@ -46,20 +46,18 @@ func _on_pit_end_button_pressed() -> void:
 	exit_pit_mode()
 
 func enter_pit_mode() -> void:
-	Game.player.process_mode = Node.PROCESS_MODE_DISABLED
+	#Game.player.process_mode = Node.PROCESS_MODE_DISABLED
 	
 	%PitScreen.visible = true
-	%PitEndButton.disabled = true
-
-func _on_repair_button_pressed() -> void:
-	try_repair()
-
-func try_repair() -> void:
-	await Game.player.repair()
 	%PitEndButton.disabled = false
 
+func _on_repair_button_pressed() -> void:
+	for key in Enum.RACER_PART.values():
+		Game.player.repair(key, 100)
+
 func exit_pit_mode() -> void:
-	Game.player.process_mode = Node.PROCESS_MODE_INHERIT
+	#Game.player.process_mode = Node.PROCESS_MODE_INHERIT
+	Game.player.end_pit_stop()
 	enter_race_mode()
 	# HACK: Pit prototype
-	Game.player.damage()
+	#Game.player.damage()
