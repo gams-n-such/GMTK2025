@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://c6lowmpiueuwc"]
+[gd_scene load_steps=3 format=3 uid="uid://c6lowmpiueuwc"]
 
 [ext_resource type="Script" uid="uid://n2gg64sxefcg" path="res://Gameplay/Race/racer.gd" id="1_k27c1"]
+[ext_resource type="PackedScene" uid="uid://bsoo7lan3nkb4" path="res://Gameplay/Racer/racer_part.tscn" id="2_e3pu7"]
 
 [node name="Racer" type="PathFollow2D"]
 rotates = false
@@ -18,3 +19,20 @@ offset_right = 10.0
 offset_bottom = 10.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Parts" type="Node" parent="."]
+unique_name_in_owner = true
+
+[node name="Rider" parent="Parts" instance=ExtResource("2_e3pu7")]
+
+[node name="Pony" parent="Parts" instance=ExtResource("2_e3pu7")]
+type = 1
+
+[node name="Chariot" parent="Parts" instance=ExtResource("2_e3pu7")]
+type = 2
+
+[node name="Wheels" parent="Parts" instance=ExtResource("2_e3pu7")]
+type = 3
+
+[node name="Horseshoe" parent="Parts" instance=ExtResource("2_e3pu7")]
+type = 4

@@ -10,7 +10,6 @@ func send_message(msg: Message) -> void:
 func dispatch() -> void:
 	while not buffer.empty():
 		var msg = buffer.pop_front()
-		print(msg.description)
 
 #region RingBuffer
 

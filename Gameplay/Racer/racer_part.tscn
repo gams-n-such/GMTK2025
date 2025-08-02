@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bsoo7lan3nkb4"]
+
+[ext_resource type="Script" uid="uid://bkgayobao0kid" path="res://Gameplay/Racer/racer_part.gd" id="1_j2u5y"]
+[ext_resource type="Script" uid="uid://cmpefrfbpmpfh" path="res://Gameplay/Attributes/attribute.gd" id="2_fgn8b"]
+
+[node name="RacerPart" type="Node"]
+script = ExtResource("1_j2u5y")
+
+[node name="Durability" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_fgn8b")
+_starting_value = 100.0
+has_max_value = true
+max_value = 100.0
+metadata/_custom_type_script = "uid://cmpefrfbpmpfh"
+
+[connection signal="value_changed" from="Durability" to="." method="_on_durability_value_changed"]
