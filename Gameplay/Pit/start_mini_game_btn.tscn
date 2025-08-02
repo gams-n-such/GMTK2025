@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://hmklooi2lxpg"]
+
+[ext_resource type="Script" uid="uid://df77go78ifwrk" path="res://Gameplay/Pit/start_mini_game_btn.gd" id="1_sqm6u"]
+
+[node name="StartMiniGameBtn" type="Button"]
+text = "Test game"
+script = ExtResource("1_sqm6u")

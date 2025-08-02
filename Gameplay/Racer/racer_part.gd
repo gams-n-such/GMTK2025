@@ -1,7 +1,7 @@
 class_name RacerPart
 extends Node
 
-@export var type : RacerConfig.RACER_PART
+@export var type : Enum.RACER_PART
 
 var durability : Attribute:
 	get:

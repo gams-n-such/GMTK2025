@@ -1,7 +1,7 @@
 class_name RacerPartStatusControl
 extends Control
 
-@export var part_type : RacerConfig.RACER_PART
+@export var part_type : Enum.RACER_PART
 
 var racer : Racer:
 	get:
@@ -36,12 +36,12 @@ func _process(delta: float) -> void:
 func _on_part_durability_changed(part: RacerPart, new_value: float) -> void:
 	update_visuals()
 
-var part_names : Dictionary[RacerConfig.RACER_PART, String] = {
-	RacerConfig.RACER_PART.RIDER: "Rider",
-	RacerConfig.RACER_PART.PONY: "Pony",
-	RacerConfig.RACER_PART.CHARIOT: "Cart",
-	RacerConfig.RACER_PART.WHEELS: "Wheels",
-	RacerConfig.RACER_PART.HORSESHOE: "H-shoes",
+var part_names : Dictionary[Enum.RACER_PART, String] = {
+	Enum.RACER_PART.RIDER: "Rider",
+	Enum.RACER_PART.PONY: "Pony",
+	Enum.RACER_PART.CHARIOT: "Cart",
+	Enum.RACER_PART.WHEELS: "Wheels",
+	Enum.RACER_PART.HORSESHOE: "H-shoes",
 }
 
 func update_visuals() -> void:

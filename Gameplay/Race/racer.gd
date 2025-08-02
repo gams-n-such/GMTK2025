@@ -38,8 +38,8 @@ var track : RaceTrack:
 
 #region Parts
 
-var _cached_parts : Dictionary[RacerConfig.RACER_PART, RacerPart]
-var all_parts : Dictionary[RacerConfig.RACER_PART, RacerPart]:
+var _cached_parts : Dictionary[Enum.RACER_PART, RacerPart]
+var all_parts : Dictionary[Enum.RACER_PART, RacerPart]:
 	get:
 		return _cached_parts
 
@@ -53,7 +53,7 @@ func init_parts() -> void:
 		part.durability.add_instant(part.durability.max_value)
 		_cached_parts.set(part.type, part)
 
-func get_part(type: RacerConfig.RACER_PART) -> RacerPart:
+func get_part(type: Enum.RACER_PART) -> RacerPart:
 	return all_parts[type]
 
 #endregion

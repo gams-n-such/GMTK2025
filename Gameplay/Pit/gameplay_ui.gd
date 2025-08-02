@@ -1,18 +1,25 @@
 extends Control
 
-
-@export var pause_scene : PackedScene = preload("res://Gameplay/Race/pause_screen.tscn")
-
-#TODO: determine if this should stay as is
-var active_mini_game = preload("res://Gameplay/Mini Games/mini_game_ui.tscn")
+@export var pause_scene = preload("res://Gameplay/Race/pause_screen.tscn")
+var active_mini_game_ui: MiniGameUi = null
 
 func _ready() -> void:
-	self.add_child(active_mini_game.instantiate())
-	self.get_children().back().game_ended.connect(on_game_ended)
-	enter_race_mode()
+	pass
 
-func on_game_ended(completed: bool) -> void:
-	print(completed)
+func start_mini_game(scene: PackedScene, part: Enum.RACER_PART)-> void:
+	%VBoxContainer.set_visible(false)
+	active_mini_game_ui = preload("res://Gameplay/Mini Games/mini_game_ui.tscn").instantiate()
+	active_mini_game_ui.game_ended.connect(on_game_ended)
+	active_mini_game_ui.init_game(scene, part)
+	active_mini_game_ui.set_anchors_preset(Control.PRESET_CENTER)
+	self.add_child(active_mini_game_ui)
+
+func on_game_ended(completed: bool, part: Enum.RACER_PART) -> void:
+	%VBoxContainer.set_visible(true)
+	if completed:
+		print("completed ", Enum.RACER_PART.keys()[part])
+	else:
+		print("gave up ", Enum.RACER_PART.keys()[part])
 
 func _process(delta: float) -> void:
 	pass
