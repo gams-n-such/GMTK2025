@@ -7,18 +7,11 @@ enum RACER_ATTRIBUTES {
 	SPEED
 }
 
-enum RacerState {
-	RACE,
-	PIT_LANE,
-	PIT_STOP,
-}
-
 signal lap_finished(racer: Racer, lap_number: int)
 
 @export var id : RacerId
 @export var config : RacerConfig
 
-var current_state: = RacerState.RACE
 var current_lap_distance : float = 0.0
 var current_lap : int = 1
 var decay_factor: float = 1.0
@@ -35,6 +28,28 @@ var limp_speed: float:
 var track : RaceTrack:
 	get:
 		return Game.race.track
+
+
+#region RacerState
+
+enum RacerState {
+	RACE,
+	PIT_LANE,
+	PIT_STOP,
+}
+
+var _current_state := RacerState.RACE
+var current_state : RacerState:
+	get:
+		return _current_state
+	set(new_state):
+		if _current_state != new_state:
+			_current_state = new_state
+			state_changed.emit(self, new_state)
+
+signal state_changed(racer: Racer, new_state: RacerState)
+
+#endregion
 
 #region Parts
 
@@ -60,11 +75,13 @@ func get_part(type: Enum.RACER_PART) -> RacerPart:
 
 
 func is_on_track() -> bool:
-	return get_parent() == track
+	return current_state == RacerState.RACE
 
 func is_in_the_pit() -> bool:
-	# HACK:
-	return not is_on_track()
+	return current_state == RacerState.PIT_LANE or current_state == RacerState.PIT_STOP
+
+func is_on_pit_stop() -> bool:
+	return current_state == RacerState.PIT_STOP
 
 func _ready() -> void:
 	assert(config != null)
@@ -180,6 +197,6 @@ func end_pit_stop() -> void:
 
 # HACK: this is temp code for pit stop prototype
 func repair(part: Enum.RACER_PART, val: float) -> void:
-	_cached_parts[part].durability.add_instant(val)
+	get_part(part).durability.add_instant(val)
 
 #endregion
