@@ -46,6 +46,8 @@ var current_state : RacerState:
 		if _current_state != new_state:
 			_current_state = new_state
 			state_changed.emit(self, new_state)
+			if new_state == RacerState.PIT_STOP:
+				in_pit.emit()
 
 signal state_changed(racer: Racer, new_state: RacerState)
 
@@ -145,7 +147,6 @@ func process_PIT_LANE(delta: float) -> void:
 	if old_distance < track.pit_length/2 and track.pit_length/2 <= current_pit_track_distance:
 		# TODO: pitstop transition
 		current_state = RacerState.PIT_STOP
-		in_pit.emit()
 	
 	if current_pit_track_distance > track.pit_length:
 		var delta_in_track := (current_pit_track_distance - track.pit_length) / track.pit_speed

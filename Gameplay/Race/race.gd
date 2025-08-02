@@ -17,7 +17,7 @@ func _ready() -> void:
 	Game.race = self
 	if Game.queued_race_config:
 		config = Game.queued_race_config
-		Game.queued_race_config = null
+		#Game.queued_race_config = null
 	
 	prepare_race()
 	# TODO: add pre-race scene
@@ -27,6 +27,10 @@ func _ready() -> void:
 	await countdown.finished
 	
 	start_race()
+
+func _process(delta: float) -> void:
+	sort_racers()
+	%Scoreboard.update(racers)
 
 func prepare_race() -> void:
 	track.config = config.track
@@ -43,7 +47,7 @@ var racers : Array[Racer]
 func spawn_player() -> Racer:
 	var new_racer : Racer = spawn_racer(Game.player_id, Game.player_config)
 	Game.player = new_racer
-	Game.player.in_pit.connect(%GameplayUI.enter_pit_mode)
+	Game.player.state_changed.connect(_on_player_state_changed)
 	new_racer.z_index = 1
 	return new_racer
 
@@ -110,8 +114,10 @@ func sort_racers() -> void:
 		return left_distance > right_distance
 		)
 
-func _process(delta: float) -> void:
-	sort_racers()
-	%Scoreboard.update(racers)
+func _on_player_state_changed(racer: Racer, new_state: Racer.RacerState) -> void:
+	if racer.is_on_pit_stop():
+		%GameplayUI.enter_pit_mode()
+	%PitBG.visible = racer.is_on_pit_stop()
+	%RaceBG.visible = not %PitBG.visible
 
 #endregion

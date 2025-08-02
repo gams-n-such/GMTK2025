@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dcuu2ev51nk5s"]
+[gd_scene load_steps=6 format=3 uid="uid://dcuu2ev51nk5s"]
 
 [ext_resource type="Script" uid="uid://dovt1wf4h7yvp" path="res://Gameplay/Pit/gameplay_ui.gd" id="1_tnax6"]
+[ext_resource type="PackedScene" uid="uid://dmx2xeu6nhjl0" path="res://Gameplay/Racer/Status/racer_status.tscn" id="2_3p6ri"]
 [ext_resource type="Script" uid="uid://df77go78ifwrk" path="res://Gameplay/Pit/start_mini_game_btn.gd" id="2_c7px1"]
-[ext_resource type="Texture2D" uid="uid://c1w08uaj3vya6" path="res://Testing/test_pit_screen_background.png" id="2_nt4pg"]
+[ext_resource type="Texture2D" uid="uid://bx7u5r08ltes1" path="res://Gameplay/Pit/Assets/Pit.svg" id="2_uueue"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c7px1"]
 
@@ -55,6 +56,16 @@ visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
+[node name="PitBG" type="TextureRect" parent="ScreenSelector/PitScreen"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_uueue")
+
 [node name="RepairButton" type="Button" parent="ScreenSelector/PitScreen"]
 visible = false
 custom_minimum_size = Vector2(120, 60)
@@ -73,22 +84,7 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 32
 text = "Repair"
 
-[node name="TextureRect" type="TextureRect" parent="ScreenSelector/PitScreen"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -396.5
-offset_top = -287.0
-offset_right = 396.5
-offset_bottom = 287.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_nt4pg")
-
-[node name="StartMiniGameBtn5" type="Button" parent="ScreenSelector/PitScreen/TextureRect"]
+[node name="StartMiniGameBtn5" type="Button" parent="ScreenSelector/PitScreen"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -104,7 +100,7 @@ grow_vertical = 2
 script = ExtResource("2_c7px1")
 metadata/_custom_type_script = "uid://df77go78ifwrk"
 
-[node name="StartMiniGameBtn2" type="Button" parent="ScreenSelector/PitScreen/TextureRect"]
+[node name="StartMiniGameBtn2" type="Button" parent="ScreenSelector/PitScreen"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -121,7 +117,7 @@ script = ExtResource("2_c7px1")
 part = 1
 metadata/_custom_type_script = "uid://df77go78ifwrk"
 
-[node name="StartMiniGameBtn4" type="Button" parent="ScreenSelector/PitScreen/TextureRect"]
+[node name="StartMiniGameBtn4" type="Button" parent="ScreenSelector/PitScreen"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -138,7 +134,7 @@ script = ExtResource("2_c7px1")
 part = 2
 metadata/_custom_type_script = "uid://df77go78ifwrk"
 
-[node name="StartMiniGameBtn3" type="Button" parent="ScreenSelector/PitScreen/TextureRect"]
+[node name="StartMiniGameBtn3" type="Button" parent="ScreenSelector/PitScreen"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -155,7 +151,7 @@ script = ExtResource("2_c7px1")
 part = 3
 metadata/_custom_type_script = "uid://df77go78ifwrk"
 
-[node name="StartMiniGameBtn" type="Button" parent="ScreenSelector/PitScreen/TextureRect"]
+[node name="StartMiniGameBtn" type="Button" parent="ScreenSelector/PitScreen"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -172,7 +168,7 @@ script = ExtResource("2_c7px1")
 part = 4
 metadata/_custom_type_script = "uid://df77go78ifwrk"
 
-[node name="PitEndButton" type="Button" parent="ScreenSelector/PitScreen/TextureRect"]
+[node name="PitEndButton" type="Button" parent="ScreenSelector/PitScreen"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(120, 60)
 layout_mode = 1
@@ -181,9 +177,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -130.5
-offset_top = -98.0
-offset_right = 131.5
+offset_left = -68.0
+offset_top = -95.0
+offset_right = 194.0
+offset_bottom = 3.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 32
@@ -239,14 +236,26 @@ script = ExtResource("2_c7px1")
 part = 4
 metadata/_custom_type_script = "uid://df77go78ifwrk"
 
+[node name="RacerStatus" parent="." instance=ExtResource("2_3p6ri")]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_right = 0.0
+offset_left = 78.0
+offset_top = -223.0
+offset_right = 404.0
+offset_bottom = -57.0
+grow_horizontal = 1
+grow_vertical = 0
+
 [connection signal="pressed" from="ScreenSelector/RacingScreen/PitStartButton" to="." method="_on_pit_start_button_pressed"]
 [connection signal="pressed" from="ScreenSelector/PitScreen/RepairButton" to="." method="_on_repair_button_pressed"]
-[connection signal="start_mini_game" from="ScreenSelector/PitScreen/TextureRect/StartMiniGameBtn5" to="." method="start_mini_game"]
-[connection signal="start_mini_game" from="ScreenSelector/PitScreen/TextureRect/StartMiniGameBtn2" to="." method="start_mini_game"]
-[connection signal="start_mini_game" from="ScreenSelector/PitScreen/TextureRect/StartMiniGameBtn4" to="." method="start_mini_game"]
-[connection signal="start_mini_game" from="ScreenSelector/PitScreen/TextureRect/StartMiniGameBtn3" to="." method="start_mini_game"]
-[connection signal="start_mini_game" from="ScreenSelector/PitScreen/TextureRect/StartMiniGameBtn" to="." method="start_mini_game"]
-[connection signal="pressed" from="ScreenSelector/PitScreen/TextureRect/PitEndButton" to="." method="_on_pit_end_button_pressed"]
+[connection signal="start_mini_game" from="ScreenSelector/PitScreen/StartMiniGameBtn5" to="." method="start_mini_game"]
+[connection signal="start_mini_game" from="ScreenSelector/PitScreen/StartMiniGameBtn2" to="." method="start_mini_game"]
+[connection signal="start_mini_game" from="ScreenSelector/PitScreen/StartMiniGameBtn4" to="." method="start_mini_game"]
+[connection signal="start_mini_game" from="ScreenSelector/PitScreen/StartMiniGameBtn3" to="." method="start_mini_game"]
+[connection signal="start_mini_game" from="ScreenSelector/PitScreen/StartMiniGameBtn" to="." method="start_mini_game"]
+[connection signal="pressed" from="ScreenSelector/PitScreen/PitEndButton" to="." method="_on_pit_end_button_pressed"]
 [connection signal="start_mini_game" from="VBoxContainer/StartMiniGameBtn" to="." method="start_mini_game"]
 [connection signal="start_mini_game" from="VBoxContainer/StartMiniGameBtn2" to="." method="start_mini_game"]
 [connection signal="start_mini_game" from="VBoxContainer/StartMiniGameBtn3" to="." method="start_mini_game"]
