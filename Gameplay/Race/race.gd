@@ -32,34 +32,16 @@ func prepare_race() -> void:
 	
 	spawn_player()
 	
-	for racer_idx in range(config.num_opponents):
-		# TODO: ensure unique IDs for racers
-		spawn_racer(get_random_racer_id(), generate_random_racer())
+	if enable_ai_racers:
+		spawn_ai_racers()
 
 #region Racers
 
 @export_category("Racers")
-@export var random_racers : Array[RacerId]
+@export var enable_ai_racers : bool = true
+@export var ai_racers : Array[AiRacerPreset]
 
 var racers : Array[Racer]
-
-func generate_random_racers(num_racers: int) -> Array[RacerConfig]:
-	var result : Array[RacerConfig]
-	for enemy_idx in range(num_racers):
-		result.append(generate_random_racer())
-	return result
-
-func generate_random_racer() -> RacerConfig:
-	# TODO: implement
-	var result_config := RacerConfig.new()
-	
-	result_config.speed = randfn(Game.player.speed, 0.5)
-	
-	return result_config
-
-func get_random_racer_id() -> RacerId:
-	# TODO: ensure unique IDs for racers
-	return random_racers.pick_random()
 
 func spawn_player() -> Racer:
 	var new_racer : Racer = spawn_racer(Game.player_id, Game.player_config)
@@ -67,6 +49,11 @@ func spawn_player() -> Racer:
 	Game.player.in_pit.connect(%GameplayUI.enter_pit_mode)
 	new_racer.z_index = 1
 	return new_racer
+
+func spawn_ai_racers() -> void:
+	for preset in ai_racers:
+		spawn_racer(preset.id, preset.racer_config)
+		# TODO: add AI logic to racer
 
 func spawn_racer(id : RacerId, config: RacerConfig) -> Racer:
 	var new_racer : Racer = racer_scene.instantiate()
