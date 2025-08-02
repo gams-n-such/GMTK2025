@@ -1,0 +1,8 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://ckhy0s5pguiub"]
+
+[ext_resource type="FontFile" uid="uid://8rnx5wu3b4er" path="res://UI/Fonts/SuperUnicorn.ttf" id="1_ptyj5"]
+
+[resource]
+default_font = ExtResource("1_ptyj5")
+default_font_size = 48
+Label/font_sizes/font_size = 72
