@@ -137,9 +137,7 @@ func increment_lap() -> void:
 	current_lap += 1
 	lap_finished.emit(self, finished_lap)
 	var msg: Message = Message.new()
-	msg.description = str("lap ", current_lap)
 	Game.message_system.send_message(msg)
-	#print("lap ", current_lap)
 
 #region Pit Stop
 var current_pit_track_distance: float = 0.0
