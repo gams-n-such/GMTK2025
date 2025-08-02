@@ -16,6 +16,11 @@ func start_mini_game(scene: PackedScene, part: Enum.RACER_PART)-> void:
 
 func on_game_ended(completed: bool, part: Enum.RACER_PART) -> void:
 	%VBoxContainer.set_visible(true)
+	
+	if completed:
+		var index = %VBoxContainer.get_children().find_custom(func(btn: StartMiniGameBtn): return btn.part == part)
+		%VBoxContainer.get_children()[index].set_disabled(true)
+	
 	if completed:
 		print("completed ", Enum.RACER_PART.keys()[part])
 	else:

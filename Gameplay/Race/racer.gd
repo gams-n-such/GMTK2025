@@ -39,7 +39,7 @@ var track : RaceTrack:
 #region Parts
 
 var _cached_parts : Dictionary[Enum.RACER_PART, RacerPart]
-var all_parts : Dictionary[Enum.RACER_PART, RacerPart]:
+var all_parts : Array[RacerPart]:
 	get:
 		return _cached_parts.values()
 
