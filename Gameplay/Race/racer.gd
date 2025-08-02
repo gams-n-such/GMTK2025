@@ -39,9 +39,9 @@ var track : RaceTrack:
 #region Parts
 
 var _cached_parts : Dictionary[RacerConfig.RACER_PART, RacerPart]
-var all_parts : Dictionary[RacerConfig.RACER_PART, RacerPart]:
+var all_parts : Array[RacerPart]:
 	get:
-		return _cached_parts
+		return _cached_parts.values()
 
 func init_parts() -> void:
 	if not _cached_parts.is_empty():
@@ -54,7 +54,7 @@ func init_parts() -> void:
 		_cached_parts.set(part.type, part)
 
 func get_part(type: RacerConfig.RACER_PART) -> RacerPart:
-	return all_parts[type]
+	return _cached_parts[type]
 
 #endregion
 
@@ -89,9 +89,8 @@ func update_hp(delta: float) -> void:
 	var critical_damage: bool = false
 	decay_factor = 0.0
 	
-	for part_type in all_parts:
-		var part := get_part(part_type)
-		var decay := config.parts_decay_speed[part_type] * delta
+	for part in all_parts:
+		var decay := config.parts_decay_speed[part.type] * delta
 		part.durability.add_instant(-decay)
 		decay_factor += part.durability.value
 		if (part.durability.value <= 0.0):
@@ -177,16 +176,21 @@ func transition_from_pit_track(delta: float) -> void:
 	process_RACE(delta)
 
 # HACK: this is temp code for pit stop prototype
-var is_repaired : bool = false
 var repair_time : float = 3.0
 
+func has_damaged_parts() -> bool:
+	for part in all_parts:
+		if part.durability.value < part.durability.max_value:
+			return true
+	return false
+
 func repair() -> void:
-	if is_repaired:
+	if not has_damaged_parts():
 		return
 	await get_tree().create_timer(repair_time).timeout
-	is_repaired = true
 
 func damage() -> void:
-	is_repaired = false
+	for part in all_parts:
+		part.durability.add_instant(part.durability.max_value)
 
 #endregion
