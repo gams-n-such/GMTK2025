@@ -86,9 +86,6 @@ func _process(delta: float) -> void:
 			push_error("Unreachable racer state")
 
 func update_hp(delta: float) -> void:
-	if self != Game.player:
-		print(all_parts[Enum.RACER_PART.RIDER].durability.value)
-	
 	var critical_damage: bool = false
 	decay_factor = 0.0
 	

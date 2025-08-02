@@ -28,7 +28,7 @@ script = ExtResource("6_ps6rc")
 speed = 10.0
 limp_speed = 1.0
 parts_durability = Dictionary[int, float]({
-0: 100.0,
+0: 35.0,
 1: 100.0,
 2: 100.0,
 3: 100.0,
