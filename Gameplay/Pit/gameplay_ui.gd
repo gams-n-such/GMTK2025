@@ -3,8 +3,16 @@ extends Control
 
 @export var pause_scene : PackedScene = preload("res://Gameplay/Race/pause_screen.tscn")
 
+#TODO: determine if this should stay as is
+var active_mini_game = preload("res://Gameplay/Mini Games/mini_game_ui.tscn")
+
 func _ready() -> void:
+	self.add_child(active_mini_game.instantiate())
+	self.get_children().back().game_ended.connect(on_game_ended)
 	enter_race_mode()
+
+func on_game_ended(completed: bool) -> void:
+	print(completed)
 
 func _process(delta: float) -> void:
 	pass

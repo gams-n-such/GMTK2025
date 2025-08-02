@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://b830v5g5ry2gt"]
+
+[ext_resource type="Script" uid="uid://dn3eet4ddvn3c" path="res://Gameplay/Mini Games/test_mini_game.gd" id="1_amhr1"]
+
+[node name="TestMiniGame" type="Node2D"]
+script = ExtResource("1_amhr1")
+
+[node name="Button" type="Button" parent="."]
+unique_name_in_owner = true
+offset_right = 8.0
+offset_bottom = 8.0
+text = "press me 3 times"
+
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
