@@ -13,3 +13,5 @@ _starting_value = 100.0
 has_max_value = true
 max_value = 100.0
 metadata/_custom_type_script = "uid://cmpefrfbpmpfh"
+
+[connection signal="value_changed" from="Durability" to="." method="_on_durability_value_changed"]
