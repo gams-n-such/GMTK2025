@@ -2,6 +2,7 @@ class_name RacerPartStatusControl
 extends Control
 
 @export var part_type : Enum.RACER_PART
+@export var gradient : Gradient
 
 var racer : Racer:
 	get:
@@ -45,6 +46,5 @@ var part_names : Dictionary[Enum.RACER_PART, String] = {
 }
 
 func update_visuals() -> void:
-	# TODO: use sprite + color
-	
+	self_modulate = gradient.sample(part.durability.percent)
 	%DurabilityLabel.text = "%s: %s" % [part_names[part_type], int(durability)]

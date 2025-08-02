@@ -28,6 +28,15 @@ var value : float:
 	get:
 		return _current_value
 
+var percent : float:
+	get:
+		if has_max_value:
+			# TODO: subtract min value
+			return value / max_value
+		else:
+			# FIXME: undefined
+			return 1.0
+
 func _init() -> void:
 	base_value = _starting_value
 
