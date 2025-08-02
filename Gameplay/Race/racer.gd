@@ -180,7 +180,22 @@ func end_pit_stop() -> void:
 
 # HACK: this is temp code for pit stop prototype
 
+<<<<<<< HEAD
 func repair(part: Enum.RACER_PART, val: float) -> void:
 	_cached_parts[part].durability.add_instant(val)
+=======
+func has_damaged_parts() -> bool:
+	for part in all_parts:
+		if part.durability.value < part.durability.max_value:
+			return true
+	return false
+
+func repair() -> void:
+	if not has_damaged_parts():
+		return
+	await get_tree().create_timer(repair_time).timeout
+	for part in all_parts:
+		part.repair()
+>>>>>>> 3d57a28791ebf75e6db2eef9d46b2ae657142c46
 
 #endregion

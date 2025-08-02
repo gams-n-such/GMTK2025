@@ -12,6 +12,10 @@ var base_value : float:
 		return _base_value
 	set(value):
 		_base_value = value
+		if has_min_value:
+			_base_value = max(min_value, _base_value)
+		if has_max_value:
+			_base_value = min(max_value, _base_value)
 		recalculate_value()
 
 @export var has_min_value : bool = true

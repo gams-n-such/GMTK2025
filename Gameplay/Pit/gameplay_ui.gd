@@ -59,5 +59,8 @@ func exit_pit_mode() -> void:
 	#Game.player.process_mode = Node.PROCESS_MODE_INHERIT
 	Game.player.end_pit_stop()
 	enter_race_mode()
+<<<<<<< HEAD
 	# HACK: Pit prototype
 	#Game.player.damage()
+=======
+>>>>>>> 3d57a28791ebf75e6db2eef9d46b2ae657142c46

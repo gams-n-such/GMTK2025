@@ -17,4 +17,4 @@ func _on_durability_value_changed(attribute: Attribute, new_value: float) -> voi
 	durability_changed.emit(self, new_value)
 
 func repair() -> void:
-	durability.add_instant(durability.max_value)
+	durability.add_instant(durability.max_value - durability.value)
