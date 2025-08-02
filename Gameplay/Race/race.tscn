@@ -1,59 +1,15 @@
-[gd_scene load_steps=15 format=3 uid="uid://1pgeprnsdwn6"]
+[gd_scene load_steps=7 format=3 uid="uid://1pgeprnsdwn6"]
 
 [ext_resource type="Script" uid="uid://bxcmj60hlbwkj" path="res://Gameplay/Race/race.gd" id="1_8knmq"]
 [ext_resource type="PackedScene" uid="uid://c6hbnr5mqtmq2" path="res://Gameplay/Race/race_track.tscn" id="2_4wokk"]
 [ext_resource type="Resource" uid="uid://c5qotdv4p1y1d" path="res://Testing/test_race.tres" id="2_b3jxk"]
-[ext_resource type="Script" uid="uid://q01tfoh4eyqt" path="res://Gameplay/Core/racer_id.gd" id="3_2c68n"]
-[ext_resource type="Script" uid="uid://b406rglj2h4rc" path="res://Gameplay/AI/ai_racer_preset.gd" id="3_6it45"]
 [ext_resource type="PackedScene" uid="uid://dcuu2ev51nk5s" path="res://Gameplay/Pit/gameplay_ui.tscn" id="4_oxb2p"]
-[ext_resource type="Script" uid="uid://ck4owvald5kfg" path="res://Gameplay/AI/ai_config.gd" id="4_sxpfx"]
 [ext_resource type="Texture2D" uid="uid://dxu21mvsd31wk" path="res://Gameplay/Race/Assets/RaceBG.svg" id="4_y1ihq"]
 [ext_resource type="PackedScene" uid="uid://dmx2xeu6nhjl0" path="res://Gameplay/Racer/Status/racer_status.tscn" id="6_hybnw"]
-[ext_resource type="Script" uid="uid://8i5np0vgso3l" path="res://Gameplay/Core/racer_config.gd" id="6_ps6rc"]
-
-[sub_resource type="Resource" id="Resource_6it45"]
-script = ExtResource("4_sxpfx")
-ai_hp_level_for_pit_stop = 30.0
-ai_pit_duration = 3.0
-metadata/_custom_type_script = "uid://ck4owvald5kfg"
-
-[sub_resource type="Resource" id="Resource_ps6rc"]
-script = ExtResource("3_2c68n")
-name = "Anon"
-color = Color(1, 0, 0, 1)
-metadata/_custom_type_script = "uid://q01tfoh4eyqt"
-
-[sub_resource type="Resource" id="Resource_lgadq"]
-script = ExtResource("6_ps6rc")
-speed = 10.0
-limp_speed = 1.0
-parts_durability = Dictionary[int, float]({
-0: 35.0,
-1: 100.0,
-2: 100.0,
-3: 100.0,
-4: 100.0
-})
-parts_decay_speed = Dictionary[int, float]({
-0: 1.0,
-1: 1.0,
-2: 1.0,
-3: 1.0,
-4: 1.0
-})
-metadata/_custom_type_script = "uid://8i5np0vgso3l"
-
-[sub_resource type="Resource" id="Resource_3qs5q"]
-script = ExtResource("3_6it45")
-id = SubResource("Resource_ps6rc")
-ai_config = SubResource("Resource_6it45")
-racer_config = SubResource("Resource_lgadq")
-metadata/_custom_type_script = "uid://b406rglj2h4rc"
 
 [node name="Race" type="Node2D"]
 script = ExtResource("1_8knmq")
 config = ExtResource("2_b3jxk")
-ai_racers = Array[ExtResource("3_6it45")]([SubResource("Resource_3qs5q")])
 
 [node name="BG" type="Sprite2D" parent="."]
 texture = ExtResource("4_y1ihq")

@@ -33,14 +33,10 @@ func prepare_race() -> void:
 	
 	spawn_player()
 	
-	if enable_ai_racers:
+	if config.enable_ai_racers:
 		spawn_ai_racers()
 
 #region Racers
-
-@export_category("Racers")
-@export var enable_ai_racers : bool = true
-@export var ai_racers : Array[AiRacerPreset]
 
 var racers : Array[Racer]
 
@@ -52,7 +48,7 @@ func spawn_player() -> Racer:
 	return new_racer
 
 func spawn_ai_racers() -> void:
-	for preset in ai_racers:
+	for preset in config.ai_racers:
 		var racer := spawn_racer(preset.id, preset.racer_config)
 		var enemy_ai := racer_ai_scene.instantiate() as EnemyAI
 		# TODO: spawning default aiconfig atm
