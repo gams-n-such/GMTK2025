@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dy8scy44wfj1s"]
+
+[ext_resource type="Script" uid="uid://dctliuovrjf7i" path="res://Gameplay/Mini Games/dragable.gd" id="1_poplf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_poplf"]
+radius = 139.014
+
+[node name="Dragable" type="StaticBody2D"]
+input_pickable = true
+script = ExtResource("1_poplf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_poplf")
