@@ -15,3 +15,6 @@ signal durability_changed(part: RacerPart, new_value: float)
 
 func _on_durability_value_changed(attribute: Attribute, new_value: float) -> void:
 	durability_changed.emit(self, new_value)
+
+func repair() -> void:
+	durability.add_instant(durability.max_value)

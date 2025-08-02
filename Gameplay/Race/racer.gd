@@ -50,7 +50,7 @@ func init_parts() -> void:
 		assert(child is RacerPart)
 		var part := child as RacerPart
 		part.durability.max_value = config.parts_durability[part.type]
-		part.durability.add_instant(part.durability.max_value)
+		part.repair()
 		_cached_parts.set(part.type, part)
 
 func get_part(type: RacerConfig.RACER_PART) -> RacerPart:
@@ -191,6 +191,6 @@ func repair() -> void:
 
 func damage() -> void:
 	for part in all_parts:
-		part.durability.add_instant(part.durability.max_value)
+		part.repair()
 
 #endregion
