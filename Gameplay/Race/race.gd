@@ -6,6 +6,7 @@ extends Node
 
 @export_category("Scenes")
 @export var racer_scene : PackedScene = preload("res://Gameplay/Race/racer.tscn")
+@export var racer_ai_scene: PackedScene = preload("res://Gameplay/Racer/enemy_ai.tscn")
 @export var game_over_scene : PackedScene = preload("res://Gameplay/Race/game_over_screen.tscn")
 
 var track : RaceTrack:
@@ -52,8 +53,12 @@ func spawn_player() -> Racer:
 
 func spawn_ai_racers() -> void:
 	for preset in ai_racers:
-		spawn_racer(preset.id, preset.racer_config)
-		# TODO: add AI logic to racer
+		var racer := spawn_racer(preset.id, preset.racer_config)
+		var enemy_ai := racer_ai_scene.instantiate() as EnemyAI
+		# TODO: spawning default aiconfig atm
+		enemy_ai.ai_config = AiConfig.new()
+		enemy_ai.racer = racer
+		racer.add_child(enemy_ai)
 
 func spawn_racer(id : RacerId, config: RacerConfig) -> Racer:
 	var new_racer : Racer = racer_scene.instantiate()
