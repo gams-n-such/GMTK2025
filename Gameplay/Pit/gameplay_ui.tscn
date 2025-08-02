@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dcuu2ev51nk5s"]
+[gd_scene load_steps=6 format=3 uid="uid://dcuu2ev51nk5s"]
 
 [ext_resource type="Script" uid="uid://dovt1wf4h7yvp" path="res://Gameplay/Pit/gameplay_ui.gd" id="1_tnax6"]
+[ext_resource type="Theme" uid="uid://bluodtnupeosy" path="res://UI/game_theme.tres" id="1_uueue"]
 [ext_resource type="PackedScene" uid="uid://dmx2xeu6nhjl0" path="res://Gameplay/Racer/Status/racer_status.tscn" id="2_3p6ri"]
 [ext_resource type="Script" uid="uid://df77go78ifwrk" path="res://Gameplay/Pit/start_mini_game_btn.gd" id="2_c7px1"]
 
@@ -13,6 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_uueue")
 script = ExtResource("1_tnax6")
 
 [node name="ScreenSelector" type="TabContainer" parent="."]
