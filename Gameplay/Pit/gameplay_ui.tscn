@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dcuu2ev51nk5s"]
+[gd_scene load_steps=5 format=3 uid="uid://dcuu2ev51nk5s"]
 
 [ext_resource type="Script" uid="uid://dovt1wf4h7yvp" path="res://Gameplay/Pit/gameplay_ui.gd" id="1_tnax6"]
 [ext_resource type="PackedScene" uid="uid://dmx2xeu6nhjl0" path="res://Gameplay/Racer/Status/racer_status.tscn" id="2_3p6ri"]
 [ext_resource type="Script" uid="uid://df77go78ifwrk" path="res://Gameplay/Pit/start_mini_game_btn.gd" id="2_c7px1"]
-[ext_resource type="Texture2D" uid="uid://bx7u5r08ltes1" path="res://Gameplay/Pit/Assets/Pit.svg" id="2_uueue"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c7px1"]
 
@@ -55,16 +54,6 @@ unique_name_in_owner = true
 visible = false
 layout_mode = 2
 metadata/_tab_index = 1
-
-[node name="PitBG" type="TextureRect" parent="ScreenSelector/PitScreen"]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_uueue")
 
 [node name="RepairButton" type="Button" parent="ScreenSelector/PitScreen"]
 visible = false
