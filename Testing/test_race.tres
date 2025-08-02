@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="RaceConfig" load_steps=11 format=3 uid="uid://c5qotdv4p1y1d"]
+[gd_resource type="Resource" script_class="RaceConfig" load_steps=27 format=3 uid="uid://c5qotdv4p1y1d"]
 
 [ext_resource type="Script" uid="uid://cqrmf2l5iinyp" path="res://Gameplay/Core/race_config.gd" id="1_08443"]
 [ext_resource type="Script" uid="uid://b406rglj2h4rc" path="res://Gameplay/AI/ai_racer_preset.gd" id="1_kj21h"]
@@ -16,13 +16,13 @@ metadata/_custom_type_script = "uid://ck4owvald5kfg"
 [sub_resource type="Resource" id="Resource_r5qmt"]
 script = ExtResource("3_tubtr")
 name = "Anon"
-color = Color(1, 0, 0, 1)
+color = Color(0.796111, 0.422565, 5.77569e-07, 1)
 metadata/_custom_type_script = "uid://q01tfoh4eyqt"
 
 [sub_resource type="Resource" id="Resource_sd6hr"]
 script = ExtResource("4_d0sdk")
-speed = 7.0
-limp_speed = 1.0
+speed = 20.0
+limp_speed = 3.0
 parts_durability = Dictionary[int, float]({
 0: 100.0,
 1: 100.0,
@@ -31,11 +31,11 @@ parts_durability = Dictionary[int, float]({
 4: 100.0
 })
 parts_decay_speed = Dictionary[int, float]({
-0: 1.0,
-1: 1.0,
+0: 0.5,
+1: 0.7,
 2: 1.0,
-3: 1.0,
-4: 1.0
+3: 1.5,
+4: 0.6
 })
 metadata/_custom_type_script = "uid://8i5np0vgso3l"
 
@@ -46,10 +46,166 @@ ai_config = SubResource("Resource_axcys")
 racer_config = SubResource("Resource_sd6hr")
 metadata/_custom_type_script = "uid://b406rglj2h4rc"
 
+[sub_resource type="Resource" id="Resource_fvnyd"]
+script = ExtResource("2_i43qv")
+ai_hp_level_for_pit_stop = 30.0
+ai_pit_duration = 3.0
+metadata/_custom_type_script = "uid://ck4owvald5kfg"
+
+[sub_resource type="Resource" id="Resource_tg87x"]
+script = ExtResource("3_tubtr")
+name = "Anon"
+color = Color(0.926355, 0.158302, 0.542162, 1)
+metadata/_custom_type_script = "uid://q01tfoh4eyqt"
+
+[sub_resource type="Resource" id="Resource_ewett"]
+script = ExtResource("4_d0sdk")
+speed = 20.2
+limp_speed = 3.0
+parts_durability = Dictionary[int, float]({
+0: 100.0,
+1: 100.0,
+2: 100.0,
+3: 100.0,
+4: 100.0
+})
+parts_decay_speed = Dictionary[int, float]({
+0: 0.5,
+1: 0.7,
+2: 1.0,
+3: 1.5,
+4: 0.6
+})
+metadata/_custom_type_script = "uid://8i5np0vgso3l"
+
+[sub_resource type="Resource" id="Resource_kj21h"]
+script = ExtResource("1_kj21h")
+id = SubResource("Resource_tg87x")
+ai_config = SubResource("Resource_fvnyd")
+racer_config = SubResource("Resource_ewett")
+metadata/_custom_type_script = "uid://b406rglj2h4rc"
+
+[sub_resource type="Resource" id="Resource_h26me"]
+script = ExtResource("2_i43qv")
+ai_hp_level_for_pit_stop = 30.0
+ai_pit_duration = 3.0
+metadata/_custom_type_script = "uid://ck4owvald5kfg"
+
+[sub_resource type="Resource" id="Resource_h057m"]
+script = ExtResource("3_tubtr")
+name = "Anon"
+color = Color(0.210156, 0.604995, 0.57979, 1)
+metadata/_custom_type_script = "uid://q01tfoh4eyqt"
+
+[sub_resource type="Resource" id="Resource_k75ws"]
+script = ExtResource("4_d0sdk")
+speed = 20.4
+limp_speed = 3.0
+parts_durability = Dictionary[int, float]({
+0: 100.0,
+1: 100.0,
+2: 100.0,
+3: 100.0,
+4: 100.0
+})
+parts_decay_speed = Dictionary[int, float]({
+0: 0.5,
+1: 0.7,
+2: 1.0,
+3: 1.5,
+4: 0.6
+})
+metadata/_custom_type_script = "uid://8i5np0vgso3l"
+
+[sub_resource type="Resource" id="Resource_i43qv"]
+script = ExtResource("1_kj21h")
+id = SubResource("Resource_h057m")
+ai_config = SubResource("Resource_h26me")
+racer_config = SubResource("Resource_k75ws")
+metadata/_custom_type_script = "uid://b406rglj2h4rc"
+
+[sub_resource type="Resource" id="Resource_tx7qy"]
+script = ExtResource("2_i43qv")
+ai_hp_level_for_pit_stop = 30.0
+ai_pit_duration = 3.0
+metadata/_custom_type_script = "uid://ck4owvald5kfg"
+
+[sub_resource type="Resource" id="Resource_y34p5"]
+script = ExtResource("3_tubtr")
+name = "Anon"
+color = Color(0.313714, 0.508588, 0.949058, 1)
+metadata/_custom_type_script = "uid://q01tfoh4eyqt"
+
+[sub_resource type="Resource" id="Resource_sk4db"]
+script = ExtResource("4_d0sdk")
+speed = 19.8
+limp_speed = 3.0
+parts_durability = Dictionary[int, float]({
+0: 100.0,
+1: 100.0,
+2: 100.0,
+3: 100.0,
+4: 100.0
+})
+parts_decay_speed = Dictionary[int, float]({
+0: 0.5,
+1: 0.7,
+2: 1.0,
+3: 1.5,
+4: 0.6
+})
+metadata/_custom_type_script = "uid://8i5np0vgso3l"
+
+[sub_resource type="Resource" id="Resource_tubtr"]
+script = ExtResource("1_kj21h")
+id = SubResource("Resource_y34p5")
+ai_config = SubResource("Resource_tx7qy")
+racer_config = SubResource("Resource_sk4db")
+metadata/_custom_type_script = "uid://b406rglj2h4rc"
+
+[sub_resource type="Resource" id="Resource_vl3a1"]
+script = ExtResource("2_i43qv")
+ai_hp_level_for_pit_stop = 30.0
+ai_pit_duration = 3.0
+metadata/_custom_type_script = "uid://ck4owvald5kfg"
+
+[sub_resource type="Resource" id="Resource_vl610"]
+script = ExtResource("3_tubtr")
+name = "Anon"
+color = Color(0.844867, 0.844867, 7.70092e-07, 1)
+metadata/_custom_type_script = "uid://q01tfoh4eyqt"
+
+[sub_resource type="Resource" id="Resource_au3va"]
+script = ExtResource("4_d0sdk")
+speed = 19.6
+limp_speed = 3.0
+parts_durability = Dictionary[int, float]({
+0: 100.0,
+1: 100.0,
+2: 100.0,
+3: 100.0,
+4: 100.0
+})
+parts_decay_speed = Dictionary[int, float]({
+0: 0.5,
+1: 0.7,
+2: 1.0,
+3: 1.5,
+4: 0.6
+})
+metadata/_custom_type_script = "uid://8i5np0vgso3l"
+
+[sub_resource type="Resource" id="Resource_d0sdk"]
+script = ExtResource("1_kj21h")
+id = SubResource("Resource_vl610")
+ai_config = SubResource("Resource_vl3a1")
+racer_config = SubResource("Resource_au3va")
+metadata/_custom_type_script = "uid://b406rglj2h4rc"
+
 [resource]
 script = ExtResource("1_08443")
-num_laps = 2
+num_laps = 20
 track = ExtResource("2_hdvsc")
 enable_ai_racers = true
-ai_racers = Array[ExtResource("1_kj21h")]([SubResource("Resource_5nl0c")])
+ai_racers = Array[ExtResource("1_kj21h")]([SubResource("Resource_5nl0c"), SubResource("Resource_kj21h"), SubResource("Resource_i43qv"), SubResource("Resource_tubtr"), SubResource("Resource_d0sdk")])
 metadata/_custom_type_script = "uid://cqrmf2l5iinyp"
