@@ -38,23 +38,23 @@ var track : RaceTrack:
 
 var rider_hp: float:
 	get:
-		return config.hp_arr[config.HPType.RIDER]
+		return config.hp_arr[config.RACER_PART.RIDER]
 
 var pony_hp: float:
 	get:
-		return config.hp_arr[config.HPType.PONY]
+		return config.hp_arr[config.RACER_PART.PONY]
 
 var chariot_hp: float:
 	get:
-		return config.hp_arr[config.HPType.CHARIOT]
+		return config.hp_arr[config.RACER_PART.CHARIOT]
 
 var wheels_hp: float:
 	get:
-		return config.hp_arr[config.HPType.WHEELS]
+		return config.hp_arr[config.RACER_PART.WHEELS]
 
 var horseshoe_hp: float:
 	get:
-		return config.hp_arr[config.HPType.HORSESHOE]
+		return config.hp_arr[config.RACER_PART.HORSESHOE]
 
 
 func is_on_track() -> bool:
