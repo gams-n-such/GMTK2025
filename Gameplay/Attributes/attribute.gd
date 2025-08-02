@@ -1,6 +1,7 @@
 class_name Attribute
 extends Node
 
+# TODO: add old_value
 signal value_changed(attribute : Attribute, new_value : float)
 
 @export var _starting_value : float = 1.0
@@ -49,6 +50,7 @@ func recalculate_value():
 	if has_max_value:
 		new_value = min(max_value, new_value)
 	_current_value = new_value
+	# FIXME: only emit if actually changed
 	value_changed.emit(self, value)
 
 func add_modifier(mod_info : AttributeModInfo) -> AttributeMod:

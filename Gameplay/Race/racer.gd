@@ -36,25 +36,27 @@ var track : RaceTrack:
 	get:
 		return Game.race.track
 
-var rider_hp: float:
-	get:
-		return config.hp_arr[config.RACER_PART.RIDER]
+#region Parts
 
-var pony_hp: float:
+var _cached_parts : Dictionary[RacerConfig.RACER_PART, RacerPart]
+var all_parts : Dictionary[RacerConfig.RACER_PART, RacerPart]:
 	get:
-		return config.hp_arr[config.RACER_PART.PONY]
+		return _cached_parts
 
-var chariot_hp: float:
-	get:
-		return config.hp_arr[config.RACER_PART.CHARIOT]
+func init_parts() -> void:
+	if not _cached_parts.is_empty():
+		return
+	for child in %Parts.get_children():
+		assert(child is RacerPart)
+		var part := child as RacerPart
+		part.durability.max_value = config.parts_durability[part.type]
+		part.durability.add_instant(part.durability.max_value)
+		_cached_parts.set(part.type, part)
 
-var wheels_hp: float:
-	get:
-		return config.hp_arr[config.RACER_PART.WHEELS]
+func get_part(type: RacerConfig.RACER_PART) -> RacerPart:
+	return all_parts[type]
 
-var horseshoe_hp: float:
-	get:
-		return config.hp_arr[config.RACER_PART.HORSESHOE]
+#endregion
 
 
 func is_on_track() -> bool:
@@ -65,8 +67,10 @@ func is_in_the_pit() -> bool:
 	return not is_on_track()
 
 func _ready() -> void:
+	assert(config != null)
 	# HACK: use sprite
 	$TempVisual.color = id.color
+	init_parts()
 	pass
 
 func _process(delta: float) -> void:
@@ -85,17 +89,20 @@ func update_hp(delta: float) -> void:
 	var critical_damage: bool = false
 	decay_factor = 0.0
 	
-	for i in config.hp_arr.size():
-		config.hp_arr[i] -= config.hp_decay_speed_arr[i] * delta
-		decay_factor += config.hp_arr[i]
-		if (config.hp_arr[i] <= 0.0):
+	for part_type in all_parts:
+		var part := get_part(part_type)
+		var decay := config.parts_decay_speed[part_type] * delta
+		part.durability.add_instant(-decay)
+		decay_factor += part.durability.value
+		if (part.durability.value <= 0.0):
+			# TODO: add attribute signal for min value hit
 			critical_damage = true
-			config.hp_arr[i] = 0.0
 	
 	if (critical_damage):
 		decay_factor = 0.0
 	else:
-		decay_factor /= config.hp_arr.size() * 100.0
+		# TODO: calc actual total durability
+		decay_factor /= all_parts.size() * 100.0
 
 func process_RACE(delta: float) -> void:
 	var old_distance := current_lap_distance
