@@ -188,8 +188,6 @@ func repair() -> void:
 	if not has_damaged_parts():
 		return
 	await get_tree().create_timer(repair_time).timeout
-
-func damage() -> void:
 	for part in all_parts:
 		part.repair()
 

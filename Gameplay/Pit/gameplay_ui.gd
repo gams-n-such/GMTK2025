@@ -61,5 +61,3 @@ func try_repair() -> void:
 func exit_pit_mode() -> void:
 	Game.player.process_mode = Node.PROCESS_MODE_INHERIT
 	enter_race_mode()
-	# HACK: Pit prototype
-	Game.player.damage()
