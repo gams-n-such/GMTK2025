@@ -9,6 +9,9 @@ signal mini_game_ended
 
 
 func start_mini_game(scene: PackedScene, part: Enum.RACER_PART)-> void:
+	if Game.player.all_parts[part].durability.value > 99.0:
+		return
+	
 	active_mini_game_ui = preload("res://Gameplay/Mini Games/mini_game_ui.tscn").instantiate()
 	active_mini_game_ui.game_ended.connect(on_game_ended)
 	active_mini_game_ui.init_game(scene, part)
