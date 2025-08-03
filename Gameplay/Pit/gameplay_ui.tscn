@@ -143,6 +143,7 @@ offset_left = -512.245
 offset_top = 95.835
 offset_right = -512.245
 offset_bottom = 95.835
+scale = Vector2(0.8, 0.7)
 
 [connection signal="pressed" from="ScreenSelector/RacingScreen/PitStartButton" to="." method="_on_pit_start_button_pressed"]
 [connection signal="mini_game_ended" from="ScreenSelector/PitScreen/PitScreen" to="." method="_on_pit_screen_mini_game_ended"]
