@@ -27,6 +27,7 @@ func set_btn_visibility(is_visible: bool) -> void:
 			child.visible = is_visible
 
 func _on_visibility_changed() -> void:
+	set_btn_visibility(self.is_visible_in_tree())
 	if active_mini_game_ui:
 		active_mini_game_ui.game_ended.disconnect(on_game_ended)
 		active_mini_game_ui.queue_free()
