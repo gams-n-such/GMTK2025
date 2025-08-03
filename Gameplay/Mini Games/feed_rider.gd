@@ -25,6 +25,25 @@ func _ready() -> void:
 	fill_combinations_arr()
 	position_items_along_buttom()
 	update_current_idx()
+	draw_clues()
+
+func draw_clues() -> void:
+	var w_offset: float = 100.0
+	var h_offset: float = 60.0
+	var start_pos : Vector2 = %CluePos.position
+	
+	for key in relation_table.keys():
+		var key_sprite := Sprite2D.new()
+		key_sprite.texture = key
+		resize(key_sprite, 0.5)
+		key_sprite.position = start_pos
+		var val_sprite := Sprite2D.new()
+		val_sprite.texture = relation_table[key]
+		resize(val_sprite, 0.5)
+		val_sprite.position = start_pos + Vector2(w_offset, 0.0)
+		self.add_child(key_sprite)
+		self.add_child(val_sprite)
+		start_pos += Vector2(0.0, h_offset)
 
 func fill_combinations_arr() -> void:
 	for key in relation_table.keys():

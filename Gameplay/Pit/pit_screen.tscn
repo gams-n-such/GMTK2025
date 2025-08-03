@@ -49,7 +49,7 @@ mini_game = ExtResource("5_b3wu3")
 part = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="Pit/StartGameBtn"]
-position = Vector2(1, -64)
+position = Vector2(2, -19)
 texture = ExtResource("5_wufqr")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Pit/StartGameBtn"]
@@ -60,7 +60,7 @@ mini_game = ExtResource("5_b3wu3")
 part = 4
 
 [node name="Sprite2D" type="Sprite2D" parent="Pit/StartGameBtn5"]
-position = Vector2(-201, 178)
+position = Vector2(-200, 180)
 texture = ExtResource("6_5awgl")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Pit/StartGameBtn5"]
@@ -92,9 +92,11 @@ position = Vector2(-148, -34)
 texture = ExtResource("7_blpmt")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Pit/StartGameBtn3"]
+visible = false
 polygon = PackedVector2Array(-138, 79, -166, -142, -130, -154, -83, -159, -50, -154, 4, -130, 31, -120, 35, -75, 48, -32, 77, -15, 94, -14, 72, 10, 61, 35, 57, 74, 64, 95, -29, 99, -99, 90)
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Pit/StartGameBtn3"]
+visible = false
 polygon = PackedVector2Array(216, -31, 320, -52, 281, 57, 276, 30, 260, 3, 240, -16)
 
 [node name="StartGameBtn4" parent="Pit" instance=ExtResource("3_4atwr")]

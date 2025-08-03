@@ -18,6 +18,11 @@ func _on_mouse_entered() -> void:
 		control_parent = control_parent.get_parent()
 	if control_parent:
 		control_parent.set_default_cursor_shape(Input.CURSOR_POINTING_HAND)
+	for child in get_children():
+		var sprite := child as Sprite2D
+		if sprite:
+			sprite.modulate = Color("676767")
+			
 	hover = true
 
 func _on_mouse_exited() -> void:
@@ -27,6 +32,12 @@ func _on_mouse_exited() -> void:
 		control_parent = control_parent.get_parent()
 	if control_parent:
 		control_parent.set_default_cursor_shape(0)
+	
+	for child in get_children():
+		var sprite := child as Sprite2D
+		if sprite:
+			sprite.modulate = Color.WHITE
+	
 	hover = false
 
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:

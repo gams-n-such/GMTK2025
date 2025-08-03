@@ -16,6 +16,7 @@ scale = Vector2(1, 0.865385)
 texture = ExtResource("2_niass")
 
 [node name="Area2D" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 polygon = PackedVector2Array(-97, 72, -130, -140, -85, -157, -29, -157, 21, -137, 64, -121, 72, -59, 84, -32, 108, -18, 133, -18, 174, -39, 211, -45, 253, -27, 269, -36, 348, -50, 330, 0, 314, 64, 305, 75, 87, 85, -65, 82)

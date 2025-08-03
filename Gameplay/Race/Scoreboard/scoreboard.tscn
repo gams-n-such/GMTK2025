@@ -23,7 +23,7 @@ unique_name_in_owner = true
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-theme_override_constants/separation = 10
+theme_override_constants/separation = 20
 
 [node name="ScoreboardRow" parent="VBoxContainer" instance=ExtResource("2_gnx0w")]
 layout_mode = 2
