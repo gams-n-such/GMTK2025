@@ -49,7 +49,7 @@ mini_game = ExtResource("5_b3wu3")
 part = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="Pit/StartGameBtn"]
-position = Vector2(1, -64)
+position = Vector2(2, -21)
 texture = ExtResource("5_wufqr")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Pit/StartGameBtn"]
