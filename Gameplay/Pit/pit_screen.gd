@@ -8,7 +8,8 @@ func start_mini_game(scene: PackedScene, part: Enum.RACER_PART)-> void:
 	active_mini_game_ui.game_ended.connect(on_game_ended)
 	active_mini_game_ui.init_game(scene, part)
 	active_mini_game_ui.set_anchors_preset(Control.PRESET_CENTER)
-	get_parent().add_child(active_mini_game_ui)
+	active_mini_game_ui.global_position = Vector2.ZERO
+	self.add_child(active_mini_game_ui)
 	set_btn_visibility(false)
 
 func on_game_ended(completed: bool, part: Enum.RACER_PART) -> void:

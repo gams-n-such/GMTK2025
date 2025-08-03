@@ -1,9 +1,22 @@
 [gd_scene load_steps=3 format=3 uid="uid://c2ok0yivd5qsb"]
 
 [ext_resource type="Script" uid="uid://dxfcejtbqwsii" path="res://Gameplay/Mini Games/feed_rider.gd" id="1_o5knu"]
-[ext_resource type="PackedScene" uid="uid://dy8scy44wfj1s" path="res://Gameplay/Mini Games/dragable.tscn" id="2_o5knu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_o5knu"]
+radius = 67.1863
 
 [node name="FeedRider" type="Node2D"]
 script = ExtResource("1_o5knu")
 
-[node name="Dragable" parent="." instance=ExtResource("2_o5knu")]
+[node name="FoodReciever" type="Area2D" parent="."]
+input_pickable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FoodReciever"]
+position = Vector2(522, 236)
+shape = SubResource("CircleShape2D_o5knu")
+
+[node name="SignPos" type="Node2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(352, 236)
+
+[connection signal="area_entered" from="FoodReciever" to="." method="_on_food_reciever_area_entered"]

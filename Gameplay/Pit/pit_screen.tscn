@@ -1,8 +1,26 @@
-[gd_scene load_steps=5 format=3 uid="uid://dlokw4rebea3y"]
+[gd_scene load_steps=8 format=3 uid="uid://dlokw4rebea3y"]
 
 [ext_resource type="Script" uid="uid://c1fbh0subxruj" path="res://Gameplay/Pit/pit_screen.gd" id="1_g7xse"]
 [ext_resource type="Texture2D" uid="uid://bx7u5r08ltes1" path="res://Gameplay/Pit/Assets/Pit.svg" id="2_4atwr"]
 [ext_resource type="PackedScene" uid="uid://brhyqx8gnwmcx" path="res://Gameplay/Pit/start_game_btn.tscn" id="3_4atwr"]
+[ext_resource type="Script" uid="uid://dxfcejtbqwsii" path="res://Gameplay/Mini Games/feed_rider.gd" id="4_fbsxa"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_o5knu"]
+radius = 67.1863
+
+[sub_resource type="PackedScene" id="PackedScene_fbsxa"]
+resource_local_to_scene = true
+_bundled = {
+"conn_count": 1,
+"conns": PackedInt32Array(1, 0, 12, 11, 2, 0, 0),
+"editable_instances": [],
+"names": PackedStringArray("FeedRider", "script", "Node2D", "FoodReciever", "input_pickable", "Area2D", "CollisionShape2D", "position", "shape", "SignPos", "unique_name_in_owner", "_on_food_reciever_area_entered", "area_entered"),
+"node_count": 4,
+"node_paths": [],
+"nodes": PackedInt32Array(-1, -1, 2, 0, -1, 1, 1, 0, 0, 0, 0, 5, 3, -1, 1, 4, 1, 0, 1, 0, 6, 6, -1, 2, 7, 2, 8, 3, 0, 0, 0, 2, 9, -1, 2, 10, 4, 7, 5, 0),
+"variants": [ExtResource("4_fbsxa"), false, Vector2(522, 236), SubResource("CircleShape2D_o5knu"), true, Vector2(352, 236)],
+"version": 3
+}
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4atwr"]
 radius = 108.019
@@ -12,6 +30,8 @@ script = ExtResource("1_g7xse")
 
 [node name="Pit" type="Sprite2D" parent="."]
 unique_name_in_owner = true
+position = Vector2(580.111, 324)
+scale = Vector2(1.03704, 1.03704)
 texture = ExtResource("2_4atwr")
 
 [node name="StartGameBtn" parent="Pit" instance=ExtResource("3_4atwr")]
@@ -23,6 +43,7 @@ polygon = PackedVector2Array(31, 38, 103, 1, 124, -18, 112, -61, 70, -75, 49, -6
 
 [node name="StartGameBtn2" parent="Pit" instance=ExtResource("3_4atwr")]
 position = Vector2(228, -178)
+mini_game = SubResource("PackedScene_fbsxa")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Pit/StartGameBtn2"]
 position = Vector2(213.317, -139.392)

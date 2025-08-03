@@ -13,12 +13,20 @@ func _ready() -> void:
 
 func _on_mouse_entered() -> void:
 	Input.set_default_cursor_shape(Input.CURSOR_POINTING_HAND)
-	get_parent().get_parent().get_parent().set_default_cursor_shape(Input.CURSOR_POINTING_HAND)
+	var control_parent = get_parent()
+	while control_parent and control_parent is not Control:
+		control_parent = control_parent.get_parent()
+	if control_parent:
+		control_parent.set_default_cursor_shape(Input.CURSOR_POINTING_HAND)
 	hover = true
 
 func _on_mouse_exited() -> void:
 	Input.set_default_cursor_shape(0)
-	get_parent().get_parent().get_parent().set_default_cursor_shape(0)
+	var control_parent = get_parent()
+	while control_parent and control_parent is not Control:
+		control_parent = control_parent.get_parent()
+	if control_parent:
+		control_parent.set_default_cursor_shape(0)
 	hover = false
 
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:

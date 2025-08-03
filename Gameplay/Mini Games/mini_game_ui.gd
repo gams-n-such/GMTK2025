@@ -13,7 +13,7 @@ func _ready() -> void:
 func init_game(scene: PackedScene, repair_part: Enum.RACER_PART) -> void:
 	part = repair_part
 	mini_game = scene.instantiate()
-	%SubViewport.add_child(mini_game)
+	self.add_child(mini_game)
 	mini_game.tree_exiting.connect(on_mini_game_exited_tree)
 
 func _on_button_pressed() -> void:
@@ -23,3 +23,8 @@ func _on_button_pressed() -> void:
 func on_mini_game_exited_tree() -> void:
 	game_ended.emit(not giveup_btn_pressed, part)
 	self.queue_free()
+
+
+func _on_sub_viewport_container_gui_input(event: InputEvent) -> void:
+	print(event)
+	pass # Replace with function body.
