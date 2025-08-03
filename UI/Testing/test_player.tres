@@ -14,10 +14,10 @@ parts_durability = Dictionary[int, float]({
 4: 100.0
 })
 parts_decay_speed = Dictionary[int, float]({
-0: 0.5,
-1: 0.7,
+0: 0.1,
+1: 0.3,
 2: 1.0,
 3: 1.5,
-4: 0.6
+4: 0.2
 })
 metadata/_custom_type_script = "uid://8i5np0vgso3l"

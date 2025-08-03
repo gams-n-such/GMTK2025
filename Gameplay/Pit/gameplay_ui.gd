@@ -9,7 +9,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	var speed = maxf(Game.player.speed * Game.player.decay_factor, Game.player.limp_speed)
-	$ScreenSelector/RacingScreen/Control/Label.text = "%d dm/s" %speed
+	$ScreenSelector/RacingScreen/Label.text = "%d dm/s" %speed
 
 func enter_race_mode() -> void:
 	%RacingScreen.visible = true
