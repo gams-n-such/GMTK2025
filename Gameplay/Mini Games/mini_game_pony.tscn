@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://ckh7ijogyywdl"]
+[gd_scene load_steps=6 format=3 uid="uid://ckh7ijogyywdl"]
 
 [ext_resource type="Script" uid="uid://da0dbokhfwpuf" path="res://Gameplay/Mini Games/mini_game_pony.gd" id="1_rabxc"]
 [ext_resource type="Texture2D" uid="uid://djyio7h8w62fn" path="res://Gameplay/Mini Games/Assets/Pony/MG_Pony_BG.svg" id="2_h7edg"]
 [ext_resource type="Texture2D" uid="uid://boo7lrem0xr23" path="res://Gameplay/Mini Games/Assets/Pony/MG_Pony_Cupcake.svg" id="3_nyeq1"]
+[ext_resource type="AudioStream" uid="uid://c2l5xjaxw0gr6" path="res://Gameplay/Mini Games/Assets/Pony/crunch.wav" id="4_h7edg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0kq6m"]
 size = Vector2(819, 461)
@@ -23,5 +24,9 @@ texture = ExtResource("3_nyeq1")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
 position = Vector2(-1.5, -0.5)
 shape = SubResource("RectangleShape2D_0kq6m")
+
+[node name="ChompSound" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("4_h7edg")
 
 [connection signal="input_event" from="Sprite2D/Area2D" to="." method="_on_area_2d_input_event"]

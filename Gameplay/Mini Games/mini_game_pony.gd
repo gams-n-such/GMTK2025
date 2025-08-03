@@ -8,5 +8,6 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 	if mouse_button and mouse_button.is_pressed():
 		clicks_left -= 1
 		%Sprite2D.modulate = Color(Color.WHITE, clicks_left / 10.0)
-		if clicks_left < 0:
+		%ChompSound.play()
+		if clicks_left <= 0:
 			self.queue_free()
