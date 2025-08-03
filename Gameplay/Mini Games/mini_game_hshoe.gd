@@ -10,6 +10,7 @@ func _ready() -> void:
 
 func on_nail_clicked(node: Clickable) -> void:
 	nails_left -= 1
+	%NailSound.play()
 	for child in node.get_children():
 		if child is Sprite2D:
 			child.visible = !child.visible
@@ -17,5 +18,4 @@ func on_nail_clicked(node: Clickable) -> void:
 			child.queue_free()
 	
 	if nails_left == 0:
-		# TODO: sfx
 		self.queue_free()
