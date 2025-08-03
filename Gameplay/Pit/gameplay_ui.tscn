@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dcuu2ev51nk5s"]
+[gd_scene load_steps=6 format=3 uid="uid://dcuu2ev51nk5s"]
 
 [ext_resource type="Script" uid="uid://dovt1wf4h7yvp" path="res://Gameplay/Pit/gameplay_ui.gd" id="1_tnax6"]
 [ext_resource type="Theme" uid="uid://bluodtnupeosy" path="res://UI/game_theme.tres" id="1_uueue"]
 [ext_resource type="PackedScene" uid="uid://dlokw4rebea3y" path="res://Gameplay/Pit/pit_screen.tscn" id="3_3p6ri"]
+[ext_resource type="PackedScene" uid="uid://dmx2xeu6nhjl0" path="res://Gameplay/Racer/Status/racer_status.tscn" id="4_uueue"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c7px1"]
 
@@ -68,6 +69,14 @@ offset_top = 440.0
 offset_right = -459.0
 offset_bottom = -157.0
 text = "10 дм/с"
+
+[node name="RacerStatus" parent="ScreenSelector/RacingScreen" instance=ExtResource("4_uueue")]
+layout_mode = 1
+offset_left = 73.0
+offset_top = 401.0
+offset_right = -560.0
+offset_bottom = 45.0
+scale = Vector2(0.775, 0.775)
 
 [node name="PitScreen" type="Control" parent="ScreenSelector"]
 unique_name_in_owner = true
