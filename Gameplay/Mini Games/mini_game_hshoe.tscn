@@ -1,16 +1,31 @@
-[gd_scene load_steps=7 format=3 uid="uid://c82jkui8hxqs"]
+[gd_scene load_steps=12 format=3 uid="uid://c82jkui8hxqs"]
 
 [ext_resource type="Texture2D" uid="uid://3km1ks8tlkht" path="res://Gameplay/Mini Games/Assets/Horseshoe/MG_Hshoe_BG.svg" id="1_415p4"]
 [ext_resource type="Script" uid="uid://dilq16hwwdqn2" path="res://Gameplay/Mini Games/mini_game_hshoe.gd" id="1_cmjds"]
+[ext_resource type="AudioStream" uid="uid://dh3g56rr71noi" path="res://Gameplay/Mini Games/Assets/Horseshoe/hammer-clink_2.wav" id="2_8rssw"]
 [ext_resource type="PackedScene" uid="uid://4i5c7b7c3yqd" path="res://Gameplay/Mini Games/clickable.tscn" id="2_vcg3a"]
+[ext_resource type="AudioStream" uid="uid://b0fgnwgh3vdck" path="res://Gameplay/Mini Games/Assets/Horseshoe/hammer-clink_3.wav" id="3_q30pk"]
 [ext_resource type="Texture2D" uid="uid://brkesbudqejwa" path="res://Gameplay/Mini Games/Assets/Horseshoe/MG_Hshoe_Nail_down.svg" id="3_v6n0w"]
+[ext_resource type="AudioStream" uid="uid://c3qubpdoe1yu5" path="res://Gameplay/Mini Games/Assets/Horseshoe/hammer-clink_4.wav" id="4_5s4ar"]
 [ext_resource type="Texture2D" uid="uid://u3e1nkl55qxh" path="res://Gameplay/Mini Games/Assets/Horseshoe/MG_Hshoe_Nail_up.svg" id="4_cmjds"]
+[ext_resource type="AudioStream" uid="uid://34dqnwua701d" path="res://Gameplay/Mini Games/Assets/Horseshoe/hammer-clink_5.wav" id="5_f63x4"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_b8wt5"]
+playback_mode = 1
+streams_count = 4
+stream_0/stream = ExtResource("2_8rssw")
+stream_1/stream = ExtResource("3_q30pk")
+stream_2/stream = ExtResource("4_5s4ar")
+stream_3/stream = ExtResource("5_f63x4")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pglfa"]
 radius = 33.697
 
 [node name="MiniGameHshoe" type="Node2D"]
 script = ExtResource("1_cmjds")
+
+[node name="NailSound" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_b8wt5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_415p4")

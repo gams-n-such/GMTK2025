@@ -17,5 +17,4 @@ func on_nail_clicked(node: Clickable) -> void:
 			child.queue_free()
 	
 	if nails_left == 0:
-		# TODO: sfx
 		self.queue_free()
