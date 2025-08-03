@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://yssyuhsiexg"]
 
 [ext_resource type="Script" uid="uid://citqw3d6a765m" path="res://Gameplay/Core/game.gd" id="1_tnixw"]
-[ext_resource type="Resource" uid="uid://p01b1n7umx4q" path="res://UI/Testing/test_player.tres" id="2_kbos6"]
+[ext_resource type="Resource" uid="uid://p01b1n7umx4q" path="res://Testing/test_player.tres" id="2_kbos6"]
 [ext_resource type="Script" uid="uid://q01tfoh4eyqt" path="res://Gameplay/Core/racer_id.gd" id="2_xactu"]
-[ext_resource type="Resource" uid="uid://c5qotdv4p1y1d" path="res://UI/Testing/test_race.tres" id="3_xactu"]
+[ext_resource type="Resource" uid="uid://c5qotdv4p1y1d" path="res://Testing/test_race.tres" id="3_xactu"]
 
 [sub_resource type="Resource" id="Resource_c57r5"]
 script = ExtResource("2_xactu")

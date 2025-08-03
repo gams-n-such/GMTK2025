@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cqrmf2l5iinyp" path="res://Gameplay/Core/race_config.gd" id="1_08443"]
 [ext_resource type="Script" uid="uid://b406rglj2h4rc" path="res://Gameplay/AI/ai_racer_preset.gd" id="1_kj21h"]
-[ext_resource type="Resource" uid="uid://wc5dchweby5u" path="res://UI/Testing/test_track.tres" id="2_hdvsc"]
+[ext_resource type="Resource" uid="uid://wc5dchweby5u" path="res://Testing/test_track.tres" id="2_hdvsc"]
 [ext_resource type="Script" uid="uid://ck4owvald5kfg" path="res://Gameplay/AI/ai_config.gd" id="2_i43qv"]
 [ext_resource type="Script" uid="uid://q01tfoh4eyqt" path="res://Gameplay/Core/racer_id.gd" id="3_tubtr"]
 [ext_resource type="Script" uid="uid://8i5np0vgso3l" path="res://Gameplay/Core/racer_config.gd" id="4_d0sdk"]
