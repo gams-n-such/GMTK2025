@@ -95,6 +95,7 @@ func end_race() -> void:
 	# TODO: remove on release 
 	print("Race finished")
 	print("Player finished in ", get_player_position_on_track(), " place")
+	%BGM.stop()
 	track.process_mode = Node.PROCESS_MODE_DISABLED
 	# TODO: move to Game class
 	var game_over_screen = game_over_scene.instantiate()
