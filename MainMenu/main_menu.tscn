@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://b3f8qjo8fpxfn"]
+[gd_scene load_steps=5 format=3 uid="uid://b3f8qjo8fpxfn"]
 
 [ext_resource type="Theme" uid="uid://ckhy0s5pguiub" path="res://UI/menu_theme.tres" id="1_3w4mj"]
 [ext_resource type="Script" uid="uid://cn0r1qs5ibu3a" path="res://MainMenu/main_menu.gd" id="1_nhkf3"]
-[ext_resource type="Texture2D" uid="uid://b6ga8spew8jsm" path="res://MainMenu/MainMenu.png" id="3_5de1l"]
+[ext_resource type="Texture2D" uid="uid://djyio7h8w62fn" path="res://Gameplay/Mini Games/Assets/Pony/MG_Pony_BG.svg" id="3_5de1l"]
+[ext_resource type="Texture2D" uid="uid://0u6e7avfb1vc" path="res://Gameplay/Pit/Assets/Pit_rider.svg" id="4_ajn5b"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -15,9 +16,19 @@ theme = ExtResource("1_3w4mj")
 script = ExtResource("1_nhkf3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(573, 345)
+position = Vector2(411, 343)
 scale = Vector2(1.4865, 1.4865)
 texture = ExtResource("3_5de1l")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(1621, 343)
+scale = Vector2(1.4865, 1.4865)
+texture = ExtResource("3_5de1l")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(878, 435)
+scale = Vector2(2.35288, 2.35288)
+texture = ExtResource("4_ajn5b")
 
 [node name="PlayButton" type="Button" parent="."]
 layout_mode = 1
@@ -26,20 +37,23 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -653.0
-offset_top = -526.0
-offset_right = -436.0
-offset_bottom = -430.0
+offset_left = -692.0
+offset_top = -458.0
+offset_right = -475.0
+offset_bottom = -362.0
 grow_horizontal = 0
 grow_vertical = 0
 text = "Play"
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 327.0
-offset_top = 23.0
-offset_right = 899.0
-offset_bottom = 113.0
+offset_left = 347.0
+offset_top = 17.0
+offset_right = 1134.0
+offset_bottom = 137.0
+theme_override_colors/font_color = Color(1, 0.65, 0.959167, 1)
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 96
 text = "My little pit-stop"
 
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]

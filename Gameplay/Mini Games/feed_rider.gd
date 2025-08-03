@@ -92,4 +92,5 @@ func _on_food_reciever_area_entered(area: Area2D) -> void:
 		combinations[current_idx].item.queue_free()
 		combinations[current_idx].sign.queue_free()
 		combinations.remove_at(current_idx)
+		%PopSound.play()
 		update_current_idx()
