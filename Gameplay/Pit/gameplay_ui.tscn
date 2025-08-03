@@ -1,11 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://dcuu2ev51nk5s"]
+[gd_scene load_steps=7 format=3 uid="uid://dcuu2ev51nk5s"]
 
 [ext_resource type="Script" uid="uid://dovt1wf4h7yvp" path="res://Gameplay/Pit/gameplay_ui.gd" id="1_tnax6"]
 [ext_resource type="Theme" uid="uid://bluodtnupeosy" path="res://UI/game_theme.tres" id="1_uueue"]
 [ext_resource type="PackedScene" uid="uid://dlokw4rebea3y" path="res://Gameplay/Pit/pit_screen.tscn" id="3_3p6ri"]
 [ext_resource type="PackedScene" uid="uid://dmx2xeu6nhjl0" path="res://Gameplay/Racer/Status/racer_status.tscn" id="4_uueue"]
-[ext_resource type="PackedScene" uid="uid://c82jkui8hxqs" path="res://Gameplay/Mini Games/mini_game_hshoe.tscn" id="5_qlmhc"]
-[ext_resource type="PackedScene" uid="uid://c2ok0yivd5qsb" path="res://Gameplay/Mini Games/feed_rider.tscn" id="6_ryslv"]
+[ext_resource type="PackedScene" uid="uid://cthpsdcu6wi7i" path="res://Gameplay/Race/Scoreboard/scoreboard.tscn" id="7_ryslv"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c7px1"]
 
@@ -19,6 +18,25 @@ grow_vertical = 2
 mouse_filter = 1
 theme = ExtResource("1_uueue")
 script = ExtResource("1_tnax6")
+
+[node name="RacerStatus" parent="." instance=ExtResource("4_uueue")]
+layout_mode = 1
+offset_left = 394.0
+offset_top = 411.0
+offset_right = -276.0
+offset_bottom = 34.0
+scale = Vector2(0.775, 0.775)
+
+[node name="Speed" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 911.0
+offset_top = 434.0
+offset_right = -134.0
+offset_bottom = -163.0
+text = "10 дм/с"
 
 [node name="ScreenSelector" type="TabContainer" parent="."]
 unique_name_in_owner = true
@@ -55,24 +73,6 @@ theme_override_font_sizes/font_size = 32
 text = "Request
 pit-stop"
 
-[node name="RacerStatus" parent="ScreenSelector/RacingScreen" instance=ExtResource("4_uueue")]
-layout_mode = 1
-offset_left = 394.0
-offset_top = 411.0
-offset_right = -276.0
-offset_bottom = 34.0
-scale = Vector2(0.775, 0.775)
-
-[node name="Label" type="Label" parent="ScreenSelector/RacingScreen"]
-layout_mode = 2
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 911.0
-offset_top = 434.0
-offset_right = -134.0
-offset_bottom = -163.0
-text = "10 дм/с"
-
 [node name="PitScreen" type="Control" parent="ScreenSelector"]
 unique_name_in_owner = true
 visible = false
@@ -81,13 +81,8 @@ mouse_filter = 1
 metadata/_tab_index = 1
 
 [node name="PitScreen" parent="ScreenSelector/PitScreen" instance=ExtResource("3_3p6ri")]
-position = Vector2(583, 328)
-
-[node name="MiniGameHshoe" parent="ScreenSelector/PitScreen/PitScreen" instance=ExtResource("5_qlmhc")]
-visible = false
-
-[node name="FeedRider" parent="ScreenSelector/PitScreen/PitScreen" instance=ExtResource("6_ryslv")]
-visible = false
+position = Vector2(561, 197)
+scale = Vector2(0.585, 0.585)
 
 [node name="RepairButton" type="Button" parent="ScreenSelector/PitScreen"]
 visible = false
@@ -116,15 +111,23 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -68.0
-offset_top = -95.0
-offset_right = 194.0
-offset_bottom = 3.0
+offset_left = 266.0
+offset_top = -140.0
+offset_right = 528.0
+offset_bottom = -50.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 32
 text = "End
 pit-stop"
+
+[node name="Scoreboard" parent="." instance=ExtResource("7_ryslv")]
+unique_name_in_owner = true
+layout_mode = 1
+offset_left = -512.245
+offset_top = 95.835
+offset_right = -512.245
+offset_bottom = 95.835
 
 [connection signal="pressed" from="ScreenSelector/RacingScreen/PitStartButton" to="." method="_on_pit_start_button_pressed"]
 [connection signal="pressed" from="ScreenSelector/PitScreen/RepairButton" to="." method="_on_repair_button_pressed"]

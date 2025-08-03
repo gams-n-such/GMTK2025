@@ -29,8 +29,8 @@ func _ready() -> void:
 	start_race()
 
 func _process(delta: float) -> void:
-	sort_racers()
-	%Scoreboard.update(racers)
+	pass
+	
 
 func prepare_race() -> void:
 	track.config = config.track
