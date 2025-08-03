@@ -39,6 +39,7 @@ texture = ExtResource("2_4atwr")
 
 [node name="StartGameBtn" parent="Pit" instance=ExtResource("3_4atwr")]
 position = Vector2(-197, 82)
+mini_game = ExtResource("5_b3wu3")
 part = 1
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Pit/StartGameBtn"]
@@ -54,6 +55,7 @@ polygon = PackedVector2Array(-212.317, 218.392, -201.317, 221.392, -193.317, 220
 
 [node name="StartGameBtn3" parent="Pit" instance=ExtResource("3_4atwr")]
 position = Vector2(180, 89)
+mini_game = ExtResource("5_b3wu3")
 part = 2
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Pit/StartGameBtn3"]
@@ -63,6 +65,7 @@ polygon = PackedVector2Array(-138, 79, -166, -142, -130, -154, -83, -159, -50, -
 polygon = PackedVector2Array(216, -31, 320, -52, 281, 57, 276, 30, 260, 3, 240, -16)
 
 [node name="StartGameBtn4" parent="Pit" instance=ExtResource("3_4atwr")]
+mini_game = ExtResource("5_b3wu3")
 part = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pit/StartGameBtn4"]
