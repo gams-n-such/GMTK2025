@@ -41,3 +41,11 @@ func exit_pit_mode() -> void:
 	#Game.player.process_mode = Node.PROCESS_MODE_INHERIT
 	Game.player.end_pit_stop()
 	enter_race_mode()
+
+
+func _on_pit_screen_mini_game_started() -> void:
+	%MinigameBlur.visible = true
+
+
+func _on_pit_screen_mini_game_ended() -> void:
+	%MinigameBlur.visible = false
