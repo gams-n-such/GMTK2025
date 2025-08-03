@@ -10,6 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://u3e1nkl55qxh" path="res://Gameplay/Mini Games/Assets/Horseshoe/MG_Hshoe_Nail_up.svg" id="4_cmjds"]
 [ext_resource type="AudioStream" uid="uid://34dqnwua701d" path="res://Gameplay/Mini Games/Assets/Horseshoe/hammer-clink_5.wav" id="5_f63x4"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_pglfa"]
+radius = 33.697
+
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_b8wt5"]
 playback_mode = 1
 streams_count = 4
@@ -18,14 +21,8 @@ stream_1/stream = ExtResource("3_q30pk")
 stream_2/stream = ExtResource("4_5s4ar")
 stream_3/stream = ExtResource("5_f63x4")
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_pglfa"]
-radius = 33.697
-
 [node name="MiniGameHshoe" type="Node2D"]
 script = ExtResource("1_cmjds")
-
-[node name="NailSound" type="AudioStreamPlayer" parent="."]
-stream = SubResource("AudioStreamRandomizer_b8wt5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_415p4")
@@ -104,3 +101,7 @@ texture = ExtResource("4_cmjds")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Clickable5"]
 shape = SubResource("CircleShape2D_pglfa")
+
+[node name="NailSound" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = SubResource("AudioStreamRandomizer_b8wt5")
