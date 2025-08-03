@@ -12,8 +12,6 @@ func start_mini_game(scene: PackedScene, part: Enum.RACER_PART)-> void:
 	active_mini_game_ui.position = Vector2.ZERO
 	
 	var mini_game_bg: Sprite2D = active_mini_game_ui.get_child(0).get_child(0)
-	print(mini_game_bg.get_rect().size.x)
-	print(%Pit.get_rect().size.x)
 	var factor: float = %Pit.get_rect().size.x / mini_game_bg.get_rect().size.x
 	active_mini_game_ui.scale = Vector2(factor, factor)
 	self.add_child(active_mini_game_ui)
