@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://c2ok0yivd5qsb"]
+[gd_scene load_steps=5 format=3 uid="uid://c2ok0yivd5qsb"]
 
 [ext_resource type="Script" uid="uid://dxfcejtbqwsii" path="res://Gameplay/Mini Games/feed_rider.gd" id="1_o5knu"]
 [ext_resource type="Texture2D" uid="uid://c0hbycdybev6x" path="res://Gameplay/Mini Games/Assets/Rider/MG_Rider_BG.svg" id="2_o5knu"]
+[ext_resource type="AudioStream" uid="uid://1xbnhve85f4n" path="res://Gameplay/Mini Games/Assets/Rider/pop.wav" id="3_fobjw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_o5knu"]
 radius = 67.1863
@@ -31,5 +32,9 @@ position = Vector2(-268, 117)
 [node name="CluePos" type="Node2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(-380, -206)
+
+[node name="PopSound" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("3_fobjw")
 
 [connection signal="area_entered" from="FoodReciever" to="." method="_on_food_reciever_area_entered"]
