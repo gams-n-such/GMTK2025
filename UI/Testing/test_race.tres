@@ -9,8 +9,8 @@
 
 [sub_resource type="Resource" id="Resource_tl0xb"]
 script = ExtResource("2_i43qv")
-ai_hp_level_for_pit_stop = 75.0
-ai_pit_duration = 15.0
+ai_hp_level_for_pit_stop = 35.0
+ai_pit_duration = 20.0
 metadata/_custom_type_script = "uid://ck4owvald5kfg"
 
 [sub_resource type="Resource" id="Resource_r5qmt"]
@@ -31,11 +31,11 @@ parts_durability = Dictionary[int, float]({
 4: 100.0
 })
 parts_decay_speed = Dictionary[int, float]({
-0: 0.1,
-1: 0.3,
-2: 1.0,
-3: 1.5,
-4: 0.2
+0: 0.5,
+1: 0.8,
+2: 1.6,
+3: 2.0,
+4: 1.0
 })
 metadata/_custom_type_script = "uid://8i5np0vgso3l"
 
@@ -48,8 +48,8 @@ metadata/_custom_type_script = "uid://b406rglj2h4rc"
 
 [sub_resource type="Resource" id="Resource_fvnyd"]
 script = ExtResource("2_i43qv")
-ai_hp_level_for_pit_stop = 65.0
-ai_pit_duration = 15.0
+ai_hp_level_for_pit_stop = 15.0
+ai_pit_duration = 20.0
 metadata/_custom_type_script = "uid://ck4owvald5kfg"
 
 [sub_resource type="Resource" id="Resource_tg87x"]
@@ -70,11 +70,11 @@ parts_durability = Dictionary[int, float]({
 4: 100.0
 })
 parts_decay_speed = Dictionary[int, float]({
-0: 0.1,
-1: 0.3,
-2: 1.0,
-3: 1.5,
-4: 0.2
+0: 0.5,
+1: 0.8,
+2: 1.6,
+3: 2.0,
+4: 1.0
 })
 metadata/_custom_type_script = "uid://8i5np0vgso3l"
 
@@ -88,7 +88,7 @@ metadata/_custom_type_script = "uid://b406rglj2h4rc"
 [sub_resource type="Resource" id="Resource_h26me"]
 script = ExtResource("2_i43qv")
 ai_hp_level_for_pit_stop = 55.0
-ai_pit_duration = 15.0
+ai_pit_duration = 20.0
 metadata/_custom_type_script = "uid://ck4owvald5kfg"
 
 [sub_resource type="Resource" id="Resource_h057m"]
@@ -109,11 +109,11 @@ parts_durability = Dictionary[int, float]({
 4: 100.0
 })
 parts_decay_speed = Dictionary[int, float]({
-0: 0.1,
-1: 0.3,
-2: 1.0,
-3: 1.5,
-4: 0.2
+0: 0.5,
+1: 0.8,
+2: 1.6,
+3: 2.0,
+4: 1.0
 })
 metadata/_custom_type_script = "uid://8i5np0vgso3l"
 
@@ -127,7 +127,7 @@ metadata/_custom_type_script = "uid://b406rglj2h4rc"
 [sub_resource type="Resource" id="Resource_tx7qy"]
 script = ExtResource("2_i43qv")
 ai_hp_level_for_pit_stop = 45.0
-ai_pit_duration = 15.0
+ai_pit_duration = 20.0
 metadata/_custom_type_script = "uid://ck4owvald5kfg"
 
 [sub_resource type="Resource" id="Resource_y34p5"]
@@ -148,11 +148,11 @@ parts_durability = Dictionary[int, float]({
 4: 100.0
 })
 parts_decay_speed = Dictionary[int, float]({
-0: 0.1,
-1: 0.3,
-2: 1.0,
-3: 1.5,
-4: 0.2
+0: 0.5,
+1: 0.8,
+2: 1.6,
+3: 2.0,
+4: 1.0
 })
 metadata/_custom_type_script = "uid://8i5np0vgso3l"
 
@@ -165,8 +165,8 @@ metadata/_custom_type_script = "uid://b406rglj2h4rc"
 
 [sub_resource type="Resource" id="Resource_vl3a1"]
 script = ExtResource("2_i43qv")
-ai_hp_level_for_pit_stop = 35.0
-ai_pit_duration = 16.0
+ai_hp_level_for_pit_stop = 75.0
+ai_pit_duration = 20.0
 metadata/_custom_type_script = "uid://ck4owvald5kfg"
 
 [sub_resource type="Resource" id="Resource_vl610"]
@@ -187,11 +187,11 @@ parts_durability = Dictionary[int, float]({
 4: 100.0
 })
 parts_decay_speed = Dictionary[int, float]({
-0: 0.1,
-1: 0.3,
-2: 1.0,
-3: 1.5,
-4: 0.2
+0: 0.5,
+1: 0.8,
+2: 1.6,
+3: 2.0,
+4: 1.0
 })
 metadata/_custom_type_script = "uid://8i5np0vgso3l"
 
@@ -205,7 +205,7 @@ metadata/_custom_type_script = "uid://b406rglj2h4rc"
 [sub_resource type="Resource" id="Resource_fr46m"]
 script = ExtResource("2_i43qv")
 ai_hp_level_for_pit_stop = 25.0
-ai_pit_duration = 3.0
+ai_pit_duration = 20.0
 metadata/_custom_type_script = "uid://ck4owvald5kfg"
 
 [sub_resource type="Resource" id="Resource_2a82o"]
@@ -226,11 +226,11 @@ parts_durability = Dictionary[int, float]({
 4: 100.0
 })
 parts_decay_speed = Dictionary[int, float]({
-0: 0.1,
-1: 0.3,
-2: 1.0,
-3: 1.5,
-4: 0.2
+0: 0.5,
+1: 0.8,
+2: 1.6,
+3: 2.0,
+4: 1.0
 })
 metadata/_custom_type_script = "uid://8i5np0vgso3l"
 
@@ -243,8 +243,8 @@ metadata/_custom_type_script = "uid://b406rglj2h4rc"
 
 [sub_resource type="Resource" id="Resource_k6605"]
 script = ExtResource("2_i43qv")
-ai_hp_level_for_pit_stop = 15.0
-ai_pit_duration = 3.0
+ai_hp_level_for_pit_stop = 65.0
+ai_pit_duration = 20.0
 metadata/_custom_type_script = "uid://ck4owvald5kfg"
 
 [sub_resource type="Resource" id="Resource_84e1x"]
@@ -265,11 +265,11 @@ parts_durability = Dictionary[int, float]({
 4: 100.0
 })
 parts_decay_speed = Dictionary[int, float]({
-0: 0.1,
-1: 0.3,
-2: 1.0,
-3: 1.5,
-4: 0.2
+0: 0.5,
+1: 0.8,
+2: 1.6,
+3: 2.0,
+4: 1.0
 })
 metadata/_custom_type_script = "uid://8i5np0vgso3l"
 
