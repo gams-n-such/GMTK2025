@@ -80,6 +80,9 @@ var countdown_scene : PackedScene = preload("res://Gameplay/Race/countdown.tscn"
 
 func start_race() -> void:
 	track.process_mode = Node.PROCESS_MODE_INHERIT
+	%StartSound.play()
+	await get_tree().create_timer(1.0).timeout
+	%BGM.play()
 
 func on_racer_lap_finished(racer: Racer, lap_number: int) -> void:
 	if lap_number == config.num_laps:
