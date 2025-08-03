@@ -9,13 +9,13 @@
 
 [sub_resource type="Resource" id="Resource_axcys"]
 script = ExtResource("2_i43qv")
-ai_hp_level_for_pit_stop = 30.0
-ai_pit_duration = 3.0
+ai_hp_level_for_pit_stop = 45.0
+ai_pit_duration = 8.0
 metadata/_custom_type_script = "uid://ck4owvald5kfg"
 
 [sub_resource type="Resource" id="Resource_r5qmt"]
 script = ExtResource("3_tubtr")
-name = "Anon"
+name = "Grumpy"
 color = Color(0.796111, 0.422565, 5.77569e-07, 1)
 metadata/_custom_type_script = "uid://q01tfoh4eyqt"
 
@@ -48,13 +48,13 @@ metadata/_custom_type_script = "uid://b406rglj2h4rc"
 
 [sub_resource type="Resource" id="Resource_fvnyd"]
 script = ExtResource("2_i43qv")
-ai_hp_level_for_pit_stop = 30.0
-ai_pit_duration = 3.0
+ai_hp_level_for_pit_stop = 55.0
+ai_pit_duration = 8.0
 metadata/_custom_type_script = "uid://ck4owvald5kfg"
 
 [sub_resource type="Resource" id="Resource_tg87x"]
 script = ExtResource("3_tubtr")
-name = "Anon"
+name = "Sneezy"
 color = Color(0.926355, 0.158302, 0.542162, 1)
 metadata/_custom_type_script = "uid://q01tfoh4eyqt"
 
@@ -87,13 +87,13 @@ metadata/_custom_type_script = "uid://b406rglj2h4rc"
 
 [sub_resource type="Resource" id="Resource_h26me"]
 script = ExtResource("2_i43qv")
-ai_hp_level_for_pit_stop = 30.0
-ai_pit_duration = 3.0
+ai_hp_level_for_pit_stop = 50.0
+ai_pit_duration = 8.0
 metadata/_custom_type_script = "uid://ck4owvald5kfg"
 
 [sub_resource type="Resource" id="Resource_h057m"]
 script = ExtResource("3_tubtr")
-name = "Anon"
+name = "Happy"
 color = Color(0.210156, 0.604995, 0.57979, 1)
 metadata/_custom_type_script = "uid://q01tfoh4eyqt"
 
@@ -126,13 +126,13 @@ metadata/_custom_type_script = "uid://b406rglj2h4rc"
 
 [sub_resource type="Resource" id="Resource_tx7qy"]
 script = ExtResource("2_i43qv")
-ai_hp_level_for_pit_stop = 30.0
-ai_pit_duration = 3.0
+ai_hp_level_for_pit_stop = 60.0
+ai_pit_duration = 8.0
 metadata/_custom_type_script = "uid://ck4owvald5kfg"
 
 [sub_resource type="Resource" id="Resource_y34p5"]
 script = ExtResource("3_tubtr")
-name = "Anon"
+name = "Doc"
 color = Color(0.313714, 0.508588, 0.949058, 1)
 metadata/_custom_type_script = "uid://q01tfoh4eyqt"
 
@@ -165,13 +165,13 @@ metadata/_custom_type_script = "uid://b406rglj2h4rc"
 
 [sub_resource type="Resource" id="Resource_vl3a1"]
 script = ExtResource("2_i43qv")
-ai_hp_level_for_pit_stop = 30.0
-ai_pit_duration = 3.0
+ai_hp_level_for_pit_stop = 20.0
+ai_pit_duration = 9.0
 metadata/_custom_type_script = "uid://ck4owvald5kfg"
 
 [sub_resource type="Resource" id="Resource_vl610"]
 script = ExtResource("3_tubtr")
-name = "Anon"
+name = "Sleepy"
 color = Color(0.844867, 0.844867, 7.70092e-07, 1)
 metadata/_custom_type_script = "uid://q01tfoh4eyqt"
 
