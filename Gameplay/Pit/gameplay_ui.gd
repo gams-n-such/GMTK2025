@@ -5,8 +5,11 @@ extends Control
 func _ready() -> void:
 	pass
 
+#maxf(speed * decay_factor, limp_speed)
+
 func _process(delta: float) -> void:
-	pass
+	var speed = maxf(Game.player.speed * Game.player.decay_factor, Game.player.limp_speed)
+	$ScreenSelector/RacingScreen/Control/Label.text = "%d dm/s" %speed
 
 func enter_race_mode() -> void:
 	%RacingScreen.visible = true
