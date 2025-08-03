@@ -55,8 +55,7 @@ func spawn_ai_racers() -> void:
 	for preset in config.ai_racers:
 		var racer := spawn_racer(preset.id, preset.racer_config)
 		var enemy_ai := racer_ai_scene.instantiate() as EnemyAI
-		# TODO: spawning default aiconfig atm
-		enemy_ai.ai_config = AiConfig.new()
+		enemy_ai.ai_config = preset.ai_config
 		enemy_ai.racer = racer
 		racer.add_child(enemy_ai)
 
