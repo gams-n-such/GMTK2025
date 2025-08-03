@@ -1,0 +1,91 @@
+[gd_scene load_steps=7 format=3 uid="uid://c82jkui8hxqs"]
+
+[ext_resource type="Texture2D" uid="uid://3km1ks8tlkht" path="res://Gameplay/Mini Games/Assets/Horseshoe/MG_Hshoe_BG.svg" id="1_415p4"]
+[ext_resource type="Script" uid="uid://dilq16hwwdqn2" path="res://Gameplay/Mini Games/mini_game_hshoe.gd" id="1_cmjds"]
+[ext_resource type="PackedScene" uid="uid://4i5c7b7c3yqd" path="res://Gameplay/Mini Games/clickable.tscn" id="2_vcg3a"]
+[ext_resource type="Texture2D" uid="uid://brkesbudqejwa" path="res://Gameplay/Mini Games/Assets/Horseshoe/MG_Hshoe_Nail_down.svg" id="3_v6n0w"]
+[ext_resource type="Texture2D" uid="uid://u3e1nkl55qxh" path="res://Gameplay/Mini Games/Assets/Horseshoe/MG_Hshoe_Nail_up.svg" id="4_cmjds"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pglfa"]
+radius = 20.2237
+
+[node name="MiniGameHshoe" type="Node2D"]
+script = ExtResource("1_cmjds")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_415p4")
+
+[node name="Clickable" parent="." instance=ExtResource("2_vcg3a")]
+position = Vector2(126.97, -65)
+
+[node name="down" type="Sprite2D" parent="Clickable"]
+visible = false
+position = Vector2(-14.3, 17.8)
+texture = ExtResource("3_v6n0w")
+
+[node name="up" type="Sprite2D" parent="Clickable"]
+position = Vector2(-1, 5)
+texture = ExtResource("4_cmjds")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Clickable"]
+shape = SubResource("CircleShape2D_pglfa")
+
+[node name="Clickable2" parent="." instance=ExtResource("2_vcg3a")]
+position = Vector2(150.77, 23.445)
+
+[node name="down" type="Sprite2D" parent="Clickable2"]
+visible = false
+position = Vector2(-14.3, 17.8)
+texture = ExtResource("3_v6n0w")
+
+[node name="up" type="Sprite2D" parent="Clickable2"]
+position = Vector2(-1, 5)
+texture = ExtResource("4_cmjds")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Clickable2"]
+shape = SubResource("CircleShape2D_pglfa")
+
+[node name="Clickable3" parent="." instance=ExtResource("2_vcg3a")]
+position = Vector2(110.315, 129.1)
+
+[node name="down" type="Sprite2D" parent="Clickable3"]
+visible = false
+position = Vector2(-14.3, 17.8)
+texture = ExtResource("3_v6n0w")
+
+[node name="up" type="Sprite2D" parent="Clickable3"]
+position = Vector2(-1, 5)
+texture = ExtResource("4_cmjds")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Clickable3"]
+shape = SubResource("CircleShape2D_pglfa")
+
+[node name="Clickable4" parent="." instance=ExtResource("2_vcg3a")]
+position = Vector2(-6.13, 115.71)
+
+[node name="down" type="Sprite2D" parent="Clickable4"]
+visible = false
+position = Vector2(-14.3, 17.8)
+texture = ExtResource("3_v6n0w")
+
+[node name="up" type="Sprite2D" parent="Clickable4"]
+position = Vector2(-1, 5)
+texture = ExtResource("4_cmjds")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Clickable4"]
+shape = SubResource("CircleShape2D_pglfa")
+
+[node name="Clickable5" parent="." instance=ExtResource("2_vcg3a")]
+position = Vector2(-62, 23.265)
+
+[node name="down" type="Sprite2D" parent="Clickable5"]
+visible = false
+position = Vector2(-14.3, 17.8)
+texture = ExtResource("3_v6n0w")
+
+[node name="up" type="Sprite2D" parent="Clickable5"]
+position = Vector2(-1, 5)
+texture = ExtResource("4_cmjds")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Clickable5"]
+shape = SubResource("CircleShape2D_pglfa")

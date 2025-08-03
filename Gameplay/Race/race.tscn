@@ -26,10 +26,11 @@ unique_name_in_owner = true
 [node name="Scoreboard" parent="UI" instance=ExtResource("7_y1ihq")]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(50, 50)
-offset_left = 346.0
-offset_top = 99.0
-offset_right = 396.0
-offset_bottom = 149.0
+offset_left = 291.325
+offset_top = 84.635
+offset_right = 341.325
+offset_bottom = 134.635
+scale = Vector2(0.805, 0.805)
 
 [node name="GameplayUI" parent="UI" instance=ExtResource("4_oxb2p")]
 unique_name_in_owner = true

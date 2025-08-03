@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://c2ok0yivd5qsb"]
+[gd_scene load_steps=4 format=3 uid="uid://c2ok0yivd5qsb"]
 
 [ext_resource type="Script" uid="uid://dxfcejtbqwsii" path="res://Gameplay/Mini Games/feed_rider.gd" id="1_o5knu"]
+[ext_resource type="Texture2D" uid="uid://c0hbycdybev6x" path="res://Gameplay/Mini Games/Assets/Rider/MG_Rider_BG.svg" id="2_o5knu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_o5knu"]
 radius = 67.1863
@@ -8,15 +9,23 @@ radius = 67.1863
 [node name="FeedRider" type="Node2D"]
 script = ExtResource("1_o5knu")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_o5knu")
+
 [node name="FoodReciever" type="Area2D" parent="."]
+position = Vector2(193, -99)
 input_pickable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FoodReciever"]
-position = Vector2(522, 236)
+position = Vector2(2, 6)
 shape = SubResource("CircleShape2D_o5knu")
 
 [node name="SignPos" type="Node2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(352, 236)
+position = Vector2(71, -94)
+
+[node name="StartPos" type="Node2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-268, 117)
 
 [connection signal="area_entered" from="FoodReciever" to="." method="_on_food_reciever_area_entered"]

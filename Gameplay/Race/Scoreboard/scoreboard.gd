@@ -12,4 +12,4 @@ func update(racers: Array[Racer]) -> void:
 		%VBoxContainer.get_child(0).queue_free()
 	
 	for i in racers.size():
-		(%VBoxContainer.get_child(i) as ScoreboardRow).update(racers[i])
+		(%VBoxContainer.get_child(i) as ScoreboardRow).update(racers[i], i + 1)

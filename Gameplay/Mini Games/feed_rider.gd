@@ -2,10 +2,10 @@ extends Node2D
 class_name FeedRider
 
 @export var relation_table: Dictionary[Resource, Resource] = {
-	preload("res://Gameplay/Racer/Status/Assets/CartStatus.svg"): preload("res://Gameplay/Racer/Status/Assets/CartStatus.svg"),
-	preload("res://Gameplay/Racer/Status/Assets/HshoeStatus.svg"): preload("res://Gameplay/Racer/Status/Assets/HshoeStatus.svg"),
-	preload("res://Gameplay/Racer/Status/Assets/PonyStatus.svg"): preload("res://Gameplay/Racer/Status/Assets/PonyStatus.svg"),
-	preload("res://Gameplay/Racer/Status/Assets/RiderStatus.svg"): preload("res://Gameplay/Racer/Status/Assets/RiderStatus.svg"),
+	preload("res://Gameplay/Mini Games/Assets/Rider/MG_Rider_Call.svg"): preload("res://Gameplay/Racer/Status/Assets/CartStatus.svg"),
+	preload("res://Gameplay/Mini Games/Assets/Rider/MG_Rider_Fist.svg"): preload("res://Gameplay/Racer/Status/Assets/HshoeStatus.svg"),
+	preload("res://Gameplay/Mini Games/Assets/Rider/MG_Rider_Palm.svg"): preload("res://Gameplay/Racer/Status/Assets/PonyStatus.svg"),
+	preload("res://Gameplay/Mini Games/Assets/Rider/MG_Rider_Peace.svg"): preload("res://Gameplay/Racer/Status/Assets/RiderStatus.svg"),
 	preload("res://Gameplay/Racer/Status/Assets/WheelStatus.svg"): preload("res://Gameplay/Racer/Status/Assets/WheelStatus.svg")
 }
 @export var sprite_width: float = 100.0
@@ -47,7 +47,7 @@ func fill_combinations_arr() -> void:
 		self.add_child(item)
 
 func position_items_along_buttom() -> void:
-	var current_pos := Vector2(200.0, 500.0)
+	var current_pos = %StartPos.position
 	for combination in combinations:
 		combination.item.position = current_pos
 		combination.starting_pos = current_pos

@@ -36,6 +36,7 @@ enum RacerState {
 	RACE,
 	PIT_LANE,
 	PIT_STOP,
+	RACE_END,
 }
 
 var _current_state := RacerState.RACE
@@ -101,6 +102,8 @@ func _process(delta: float) -> void:
 			process_PIT_LANE(delta)
 		RacerState.PIT_STOP:
 			process_PIT_STOP(delta)
+		RacerState.RACE_END:
+			pass
 		_:
 			push_error("Unreachable racer state")
 

@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dcuu2ev51nk5s"]
+[gd_scene load_steps=8 format=3 uid="uid://dcuu2ev51nk5s"]
 
 [ext_resource type="Script" uid="uid://dovt1wf4h7yvp" path="res://Gameplay/Pit/gameplay_ui.gd" id="1_tnax6"]
 [ext_resource type="Theme" uid="uid://bluodtnupeosy" path="res://UI/game_theme.tres" id="1_uueue"]
 [ext_resource type="PackedScene" uid="uid://dlokw4rebea3y" path="res://Gameplay/Pit/pit_screen.tscn" id="3_3p6ri"]
 [ext_resource type="PackedScene" uid="uid://dmx2xeu6nhjl0" path="res://Gameplay/Racer/Status/racer_status.tscn" id="4_uueue"]
+[ext_resource type="PackedScene" uid="uid://c82jkui8hxqs" path="res://Gameplay/Mini Games/mini_game_hshoe.tscn" id="5_qlmhc"]
+[ext_resource type="PackedScene" uid="uid://c2ok0yivd5qsb" path="res://Gameplay/Mini Games/feed_rider.tscn" id="6_ryslv"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c7px1"]
 
@@ -86,6 +88,13 @@ mouse_filter = 1
 metadata/_tab_index = 1
 
 [node name="PitScreen" parent="ScreenSelector/PitScreen" instance=ExtResource("3_3p6ri")]
+position = Vector2(583, 328)
+
+[node name="MiniGameHshoe" parent="ScreenSelector/PitScreen/PitScreen" instance=ExtResource("5_qlmhc")]
+visible = false
+
+[node name="FeedRider" parent="ScreenSelector/PitScreen/PitScreen" instance=ExtResource("6_ryslv")]
+visible = false
 
 [node name="RepairButton" type="Button" parent="ScreenSelector/PitScreen"]
 visible = false

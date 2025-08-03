@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://4i5c7b7c3yqd"]
+
+[ext_resource type="Script" uid="uid://dkya0v7k46wkx" path="res://Gameplay/Mini Games/clickable.gd" id="1_yosl1"]
+
+[node name="Clickable" type="Area2D"]
+script = ExtResource("1_yosl1")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

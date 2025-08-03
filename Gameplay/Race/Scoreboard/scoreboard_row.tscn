@@ -16,6 +16,26 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_vvxjq")
 
+[node name="Panel4" type="Panel" parent="."]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel4"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_right = 40.0
+offset_bottom = 20.0
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+
+[node name="Position" type="Label" parent="Panel4/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
 [node name="Color" type="Panel" parent="."]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(30, 25.54)
@@ -60,7 +80,7 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 15
+theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10

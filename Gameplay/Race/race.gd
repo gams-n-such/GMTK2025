@@ -83,6 +83,9 @@ func start_race() -> void:
 	track.process_mode = Node.PROCESS_MODE_INHERIT
 
 func on_racer_lap_finished(racer: Racer, lap_number: int) -> void:
+	if lap_number == config.num_laps:
+		racer.current_state = racer.RacerState.RACE_END
+	
 	if lap_number == config.num_laps and racer == Game.player:
 		end_race()
 
