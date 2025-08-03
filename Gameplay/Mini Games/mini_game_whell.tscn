@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cygh6jadgkhc5"]
+[gd_scene load_steps=14 format=3 uid="uid://cygh6jadgkhc5"]
 
 [ext_resource type="Script" uid="uid://cvfv28cloa506" path="res://Gameplay/Mini Games/mini_game_whell.gd" id="1_5jqqg"]
 [ext_resource type="Texture2D" uid="uid://gv5uo1rl6wlj" path="res://Gameplay/Mini Games/Assets/Wheel/MG_Wheel_BG.svg" id="1_a01ao"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cxun6oqvdcjp0" path="res://Gameplay/Mini Games/Assets/Wheel/MG_Wheel_Broken.svg" id="4_a6sys"]
 [ext_resource type="Texture2D" uid="uid://cnpa6lk4nmmrx" path="res://Gameplay/Mini Games/Assets/Wheel/MG_Wheel_LynchPin.svg" id="5_nj2jl"]
 [ext_resource type="Texture2D" uid="uid://debcktl5i7tah" path="res://Gameplay/Mini Games/Assets/Wheel/MG_Wheel_Axle.svg" id="6_0vdbl"]
+[ext_resource type="AudioStream" uid="uid://cdaasfgtgyv05" path="res://Gameplay/Mini Games/Assets/Wheel/drag_wood.wav" id="8_msxyu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_msxyu"]
 radius = 45.3982
@@ -106,6 +107,10 @@ position = Vector2(33, 8.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BG/Axle"]
 shape = SubResource("CircleShape2D_5jqqg")
+
+[node name="MoveSound" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("8_msxyu")
 
 [connection signal="area_entered" from="BG/Trash" to="." method="_on_trash_area_entered"]
 [connection signal="area_entered" from="BG/Axle" to="." method="_on_axle_area_entered"]
