@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dm7ynpytdhb60"]
+[gd_scene load_steps=5 format=3 uid="uid://dm7ynpytdhb60"]
 
 [ext_resource type="Script" uid="uid://pmxljarxewf6" path="res://Gameplay/Race/game_over_screen.gd" id="1_3oopu"]
+[ext_resource type="Theme" uid="uid://ckhy0s5pguiub" path="res://UI/menu_theme.tres" id="1_ecgsf"]
 [ext_resource type="AudioStream" uid="uid://clu88e0hyilsu" path="res://Gameplay/Race/Assets/fanfare.wav" id="2_7m1g1"]
 [ext_resource type="AudioStream" uid="uid://bpu246ig04q3g" path="res://Gameplay/Race/Assets/horn_fail_wahwah_3.wav" id="3_ecgsf"]
 
@@ -12,6 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_ecgsf")
 script = ExtResource("1_3oopu")
 
 [node name="WinSound" type="AudioStreamPlayer" parent="."]
