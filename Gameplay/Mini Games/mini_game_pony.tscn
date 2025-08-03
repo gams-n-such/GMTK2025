@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://ckh7ijogyywdl"]
+
+[ext_resource type="Script" uid="uid://da0dbokhfwpuf" path="res://Gameplay/Mini Games/mini_game_pony.gd" id="1_rabxc"]
+[ext_resource type="Texture2D" uid="uid://djyio7h8w62fn" path="res://Gameplay/Mini Games/Assets/Pony/MG_Pony_BG.svg" id="2_h7edg"]
+[ext_resource type="Texture2D" uid="uid://boo7lrem0xr23" path="res://Gameplay/Mini Games/Assets/Pony/MG_Pony_Cupcake.svg" id="3_nyeq1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0kq6m"]
+size = Vector2(819, 461)
+
+[node name="MiniGamePony" type="Node2D"]
+script = ExtResource("1_rabxc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_h7edg")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]
+unique_name_in_owner = true
+position = Vector2(164, -33)
+texture = ExtResource("3_nyeq1")
+
+[node name="Area2D" type="Area2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
+position = Vector2(-1.5, -0.5)
+shape = SubResource("RectangleShape2D_0kq6m")
+
+[connection signal="input_event" from="Sprite2D/Area2D" to="." method="_on_area_2d_input_event"]

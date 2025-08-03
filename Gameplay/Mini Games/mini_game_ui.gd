@@ -13,6 +13,7 @@ func _ready() -> void:
 func init_game(scene: PackedScene, repair_part: Enum.RACER_PART) -> void:
 	part = repair_part
 	mini_game = scene.instantiate()
+	mini_game.name = "mini_game"
 	self.add_child(mini_game)
 	mini_game.tree_exiting.connect(on_mini_game_exited_tree)
 	self.move_child(%Button, self.get_child_count())

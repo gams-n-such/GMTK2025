@@ -1,8 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://dlokw4rebea3y"]
+[gd_scene load_steps=16 format=3 uid="uid://dlokw4rebea3y"]
 
 [ext_resource type="Script" uid="uid://c1fbh0subxruj" path="res://Gameplay/Pit/pit_screen.gd" id="1_g7xse"]
 [ext_resource type="Texture2D" uid="uid://bx7u5r08ltes1" path="res://Gameplay/Pit/Assets/Pit.svg" id="2_4atwr"]
 [ext_resource type="PackedScene" uid="uid://brhyqx8gnwmcx" path="res://Gameplay/Pit/start_game_btn.tscn" id="3_4atwr"]
+[ext_resource type="PackedScene" uid="uid://ckh7ijogyywdl" path="res://Gameplay/Mini Games/mini_game_pony.tscn" id="4_4wqjm"]
 [ext_resource type="PackedScene" uid="uid://c2ok0yivd5qsb" path="res://Gameplay/Mini Games/feed_rider.tscn" id="4_b3wu3"]
 [ext_resource type="PackedScene" uid="uid://c82jkui8hxqs" path="res://Gameplay/Mini Games/mini_game_hshoe.tscn" id="5_b3wu3"]
 [ext_resource type="Texture2D" uid="uid://dq6rvklowutbj" path="res://Gameplay/Pit/Assets/Pit_pony.svg" id="5_wufqr"]
@@ -46,7 +47,7 @@ texture = ExtResource("2_4atwr")
 
 [node name="StartGameBtn" parent="Pit" instance=ExtResource("3_4atwr")]
 position = Vector2(-197, 82)
-mini_game = ExtResource("5_b3wu3")
+mini_game = ExtResource("4_4wqjm")
 part = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="Pit/StartGameBtn"]
@@ -93,11 +94,9 @@ position = Vector2(-148, -34)
 texture = ExtResource("7_blpmt")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Pit/StartGameBtn3"]
-visible = false
 polygon = PackedVector2Array(-138, 79, -166, -142, -130, -154, -83, -159, -50, -154, 4, -130, 31, -120, 35, -75, 48, -32, 77, -15, 94, -14, 72, 10, 61, 35, 57, 74, 64, 95, -29, 99, -99, 90)
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Pit/StartGameBtn3"]
-visible = false
 polygon = PackedVector2Array(216, -31, 320, -52, 281, 57, 276, 30, 260, 3, 240, -16)
 
 [node name="StartGameBtn4" parent="Pit" instance=ExtResource("3_4atwr")]

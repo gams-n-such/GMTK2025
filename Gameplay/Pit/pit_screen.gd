@@ -15,7 +15,9 @@ func start_mini_game(scene: PackedScene, part: Enum.RACER_PART)-> void:
 	active_mini_game_ui.set_anchors_preset(Control.PRESET_CENTER)
 	active_mini_game_ui.position = Vector2.ZERO
 	
-	var mini_game_bg: Sprite2D = active_mini_game_ui.get_child(0).get_child(0)
+	var mini_game = active_mini_game_ui.get_child(active_mini_game_ui.get_children().find_custom(func(node)->bool: return node.name == "mini_game"))
+	var mini_game_bg = mini_game.get_child(mini_game.get_children().find_custom(func(node)->bool: return node is Sprite2D)) as Sprite2D
+	
 	var factor: float = %Pit.get_rect().size.x / mini_game_bg.get_rect().size.x
 	active_mini_game_ui.scale = Vector2(factor, factor)
 	self.add_child(active_mini_game_ui)

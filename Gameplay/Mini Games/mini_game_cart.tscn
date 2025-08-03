@@ -8,22 +8,22 @@
 [node name="MiniGameCart" type="Node2D"]
 script = ExtResource("1_niass")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="BG" type="Sprite2D" parent="."]
 texture = ExtResource("1_nkgva")
 
-[node name="Dirt" type="Sprite2D" parent="Sprite2D"]
+[node name="Dirt" type="Sprite2D" parent="BG"]
 unique_name_in_owner = true
 position = Vector2(113, -33)
 scale = Vector2(1, 0.865385)
 texture = ExtResource("2_niass")
 
-[node name="Area2D" type="Area2D" parent="Sprite2D"]
+[node name="Area2D" type="Area2D" parent="BG"]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite2D/Area2D"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BG/Area2D"]
 polygon = PackedVector2Array(-97, 72, -130, -140, -85, -157, -29, -157, 21, -137, 64, -121, 72, -59, 84, -32, 108, -18, 133, -18, 174, -39, 211, -45, 253, -27, 269, -36, 348, -50, 330, 0, 314, 64, 305, 75, 87, 85, -65, 82)
 
-[node name="Sponge" type="Sprite2D" parent="Sprite2D"]
+[node name="Sponge" type="Sprite2D" parent="BG"]
 unique_name_in_owner = true
 texture = ExtResource("4_1r1on")
 
-[connection signal="input_event" from="Sprite2D/Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="input_event" from="BG/Area2D" to="." method="_on_area_2d_input_event"]
