@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=3 uid="uid://dlokw4rebea3y"]
+
+[ext_resource type="Script" uid="uid://c1fbh0subxruj" path="res://Gameplay/Pit/pit_screen.gd" id="1_g7xse"]
+[ext_resource type="Texture2D" uid="uid://bx7u5r08ltes1" path="res://Gameplay/Pit/Assets/Pit.svg" id="2_4atwr"]
+[ext_resource type="PackedScene" uid="uid://brhyqx8gnwmcx" path="res://Gameplay/Pit/start_game_btn.tscn" id="3_4atwr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4atwr"]
+radius = 108.019
+
+[node name="PitScreen" type="Node2D"]
+script = ExtResource("1_g7xse")
+
+[node name="Pit" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+texture = ExtResource("2_4atwr")
+
+[node name="StartGameBtn" parent="Pit" instance=ExtResource("3_4atwr")]
+position = Vector2(-197, 82)
+part = 1
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Pit/StartGameBtn"]
+polygon = PackedVector2Array(31, 38, 103, 1, 124, -18, 112, -61, 70, -75, 49, -68, 36, -63, 3, -82, -8, -82, -41, -70, -30, -83, -53, -126, -38, -117, -55, -141, -45, -142, -61, -152, -45, -168, -65, -167, -61, -190, -82, -186, -86, -220, -115, -205, -113, -225, -141, -202, -139, -224, -167, -194, -171, -216, -180, -190, -195, -205, -188, -165, -199, -173, -183, -142, -171, -137, -178, -122, -176, -92, -168, -72, -165, -60, -178, -53, -168, -42, -142, -37, -113, -44, -112, -10, -97, 36, -64, 57, -14, 56)
+
+[node name="StartGameBtn2" parent="Pit" instance=ExtResource("3_4atwr")]
+position = Vector2(228, -178)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Pit/StartGameBtn2"]
+position = Vector2(213.317, -139.392)
+polygon = PackedVector2Array(-212.317, 218.392, -201.317, 221.392, -193.317, 220.392, -187.317, 204.392, -187.317, 199.392, -182.317, 198.392, -180.317, 190.392, -178.317, 189.392, -175.317, 146.392, -180.317, 144.392, -178.317, 140.392, -171.317, 143.392, -168.317, 131.392, -174.317, 120.392, -173.317, 115.392, -182.317, 77.3923, -169.317, 94.3923, -168.317, 65.3923, -198.317, 57.3923, -213.317, 67.3923, -229.317, 81.3923, -232.317, 95.3923, -234.317, 105.392, -241.317, 105.392, -240.317, 110.392, -245.317, 118.392, -240.317, 125.392, -248.317, 128.392, -242.317, 132.392, -242.317, 140.392, -242.317, 145.392, -263.317, 151.392, -258.317, 176.392, -248.317, 179.392, -248.317, 183.392, -264.317, 189.392, -272.317, 191.392, -281.317, 185.392, -284.317, 176.392, -294.317, 187.392, -282.317, 205.392, -285.317, 208.392, -276.317, 216.392, -257.317, 209.392, -258.317, 206.392, -236.317, 199.392, -219.317, 199.392, -217.317, 209.392)
+
+[node name="StartGameBtn3" parent="Pit" instance=ExtResource("3_4atwr")]
+position = Vector2(180, 89)
+part = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Pit/StartGameBtn3"]
+polygon = PackedVector2Array(-138, 79, -166, -142, -130, -154, -83, -159, -50, -154, 4, -130, 31, -120, 35, -75, 48, -32, 77, -15, 94, -14, 72, 10, 61, 35, 57, 74, 64, 95, -29, 99, -99, 90)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Pit/StartGameBtn3"]
+polygon = PackedVector2Array(216, -31, 320, -52, 281, 57, 276, 30, 260, 3, 240, -16)
+
+[node name="StartGameBtn4" parent="Pit" instance=ExtResource("3_4atwr")]
+part = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pit/StartGameBtn4"]
+position = Vector2(351, 157)
+shape = SubResource("CircleShape2D_4atwr")
+
+[node name="StartGameBtn5" parent="Pit" instance=ExtResource("3_4atwr")]
+part = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Pit/StartGameBtn5"]
+polygon = PackedVector2Array(-336, 219, -316, 196, -293, 156, -285, 131, -262, 143, -216, 143, -174, 133, -138, 108, -92, 83, -77, 77, -90, 125, -78, 125, -68, 187, -68, 234, -83, 250, -116, 245, -128, 242, -156, 222, -164, 222, -199, 219, -207, 255, -224, 262, -254, 264, -260, 254, -268, 235, -292, 229, -320, 232)
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="start_mini_game" from="Pit/StartGameBtn" to="." method="start_mini_game"]
+[connection signal="start_mini_game" from="Pit/StartGameBtn2" to="." method="start_mini_game"]
+[connection signal="start_mini_game" from="Pit/StartGameBtn3" to="." method="start_mini_game"]
+[connection signal="start_mini_game" from="Pit/StartGameBtn4" to="." method="start_mini_game"]
+[connection signal="start_mini_game" from="Pit/StartGameBtn5" to="." method="start_mini_game"]

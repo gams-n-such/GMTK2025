@@ -117,7 +117,5 @@ func sort_racers() -> void:
 func _on_player_state_changed(racer: Racer, new_state: Racer.RacerState) -> void:
 	if racer.is_on_pit_stop():
 		%GameplayUI.enter_pit_mode()
-	%PitBG.visible = racer.is_on_pit_stop()
-	%RaceBG.visible = not %PitBG.visible
 
 #endregion
