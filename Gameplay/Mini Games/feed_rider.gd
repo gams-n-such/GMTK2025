@@ -2,11 +2,10 @@ extends Node2D
 class_name FeedRider
 
 @export var relation_table: Dictionary[Resource, Resource] = {
-	preload("res://Gameplay/Mini Games/Assets/Rider/MG_Rider_Call.svg"): preload("res://Gameplay/Racer/Status/Assets/CartStatus.svg"),
-	preload("res://Gameplay/Mini Games/Assets/Rider/MG_Rider_Fist.svg"): preload("res://Gameplay/Racer/Status/Assets/HshoeStatus.svg"),
-	preload("res://Gameplay/Mini Games/Assets/Rider/MG_Rider_Palm.svg"): preload("res://Gameplay/Racer/Status/Assets/PonyStatus.svg"),
-	preload("res://Gameplay/Mini Games/Assets/Rider/MG_Rider_Peace.svg"): preload("res://Gameplay/Racer/Status/Assets/RiderStatus.svg"),
-	preload("res://Gameplay/Racer/Status/Assets/WheelStatus.svg"): preload("res://Gameplay/Racer/Status/Assets/WheelStatus.svg")
+	preload("res://Gameplay/Mini Games/Assets/Rider/MG_Rider_Call.svg"): preload("res://Gameplay/Mini Games/Assets/Rider/MG_Rider_Cap.svg"),
+	preload("res://Gameplay/Mini Games/Assets/Rider/MG_Rider_Fist.svg"): preload("res://Gameplay/Mini Games/Assets/Rider/MG_Rider_Mug.svg"),
+	preload("res://Gameplay/Mini Games/Assets/Rider/MG_Rider_Palm.svg"): preload("res://Gameplay/Mini Games/Assets/Rider/MG_Rider_Lolipop.svg"),
+	preload("res://Gameplay/Mini Games/Assets/Rider/MG_Rider_Peace.svg"): preload("res://Gameplay/Mini Games/Assets/Rider/MG_Rider_Pipe.svg"),
 }
 @export var sprite_width: float = 100.0
 
