@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dlokw4rebea3y"]
+[gd_scene load_steps=17 format=3 uid="uid://dlokw4rebea3y"]
 
 [ext_resource type="Script" uid="uid://c1fbh0subxruj" path="res://Gameplay/Pit/pit_screen.gd" id="1_g7xse"]
 [ext_resource type="Texture2D" uid="uid://bx7u5r08ltes1" path="res://Gameplay/Pit/Assets/Pit.svg" id="2_4atwr"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://0u6e7avfb1vc" path="res://Gameplay/Pit/Assets/Pit_rider.svg" id="8_4wqjm"]
 [ext_resource type="PackedScene" uid="uid://qex5u2pf4lvr" path="res://Gameplay/Mini Games/mini_game_cart.tscn" id="9_5awgl"]
 [ext_resource type="Texture2D" uid="uid://cv664twvrwi7b" path="res://Gameplay/Pit/Assets/Pit_wheel.svg" id="11_r4gk1"]
+[ext_resource type="PackedScene" uid="uid://cygh6jadgkhc5" path="res://Gameplay/Mini Games/mini_game_whell.tscn" id="13_r4gk1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b3wu3"]
 bg_color = Color(0, 0, 0, 1)
@@ -100,7 +101,7 @@ polygon = PackedVector2Array(-138, 79, -166, -142, -130, -154, -83, -159, -50, -
 polygon = PackedVector2Array(216, -31, 320, -52, 281, 57, 276, 30, 260, 3, 240, -16)
 
 [node name="StartGameBtn4" parent="Pit" instance=ExtResource("3_4atwr")]
-mini_game = ExtResource("5_b3wu3")
+mini_game = ExtResource("13_r4gk1")
 part = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="Pit/StartGameBtn4"]
