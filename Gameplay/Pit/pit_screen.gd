@@ -4,6 +4,10 @@ class_name PitScreen
 var active_mini_game_ui: MiniGameUi = null
 #@export var target_width: float = 480.0
 
+signal mini_game_started
+signal mini_game_ended
+
+
 func start_mini_game(scene: PackedScene, part: Enum.RACER_PART)-> void:
 	active_mini_game_ui = preload("res://Gameplay/Mini Games/mini_game_ui.tscn").instantiate()
 	active_mini_game_ui.game_ended.connect(on_game_ended)
@@ -16,6 +20,7 @@ func start_mini_game(scene: PackedScene, part: Enum.RACER_PART)-> void:
 	active_mini_game_ui.scale = Vector2(factor, factor)
 	self.add_child(active_mini_game_ui)
 	set_btn_visibility(false)
+	mini_game_started.emit()
 
 func on_game_ended(completed: bool, part: Enum.RACER_PART) -> void:
 	active_mini_game_ui.game_ended.disconnect(on_game_ended)
@@ -25,6 +30,7 @@ func on_game_ended(completed: bool, part: Enum.RACER_PART) -> void:
 		Game.player.repair(part, 100)
 	
 	set_btn_visibility(true)
+	mini_game_ended.emit()
 
 func set_btn_visibility(is_visible: bool) -> void:
 	for child in %Pit.get_children():

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dcuu2ev51nk5s"]
+[gd_scene load_steps=8 format=3 uid="uid://dcuu2ev51nk5s"]
 
 [ext_resource type="Script" uid="uid://dovt1wf4h7yvp" path="res://Gameplay/Pit/gameplay_ui.gd" id="1_tnax6"]
 [ext_resource type="Theme" uid="uid://bluodtnupeosy" path="res://UI/game_theme.tres" id="1_uueue"]
@@ -7,6 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://cthpsdcu6wi7i" path="res://Gameplay/Race/Scoreboard/scoreboard.tscn" id="7_ryslv"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c7px1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3p6ri"]
+bg_color = Color(0, 0, 0, 0.501961)
 
 [node name="GameplayUI" type="Control"]
 layout_mode = 3
@@ -80,6 +83,18 @@ layout_mode = 2
 mouse_filter = 1
 metadata/_tab_index = 1
 
+[node name="MinigameBlur" type="Panel" parent="ScreenSelector/PitScreen"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_3p6ri")
+
 [node name="PitScreen" parent="ScreenSelector/PitScreen" instance=ExtResource("3_3p6ri")]
 position = Vector2(561, 197)
 scale = Vector2(0.585, 0.585)
@@ -130,5 +145,7 @@ offset_right = -512.245
 offset_bottom = 95.835
 
 [connection signal="pressed" from="ScreenSelector/RacingScreen/PitStartButton" to="." method="_on_pit_start_button_pressed"]
+[connection signal="mini_game_ended" from="ScreenSelector/PitScreen/PitScreen" to="." method="_on_pit_screen_mini_game_ended"]
+[connection signal="mini_game_started" from="ScreenSelector/PitScreen/PitScreen" to="." method="_on_pit_screen_mini_game_started"]
 [connection signal="pressed" from="ScreenSelector/PitScreen/RepairButton" to="." method="_on_repair_button_pressed"]
 [connection signal="pressed" from="ScreenSelector/PitScreen/PitEndButton" to="." method="_on_pit_end_button_pressed"]

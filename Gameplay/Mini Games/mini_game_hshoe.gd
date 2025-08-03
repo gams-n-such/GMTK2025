@@ -18,5 +18,4 @@ func on_nail_clicked(node: Clickable) -> void:
 	
 	if nails_left == 0:
 		# TODO: sfx
-		await get_tree().create_timer(0.5).timeout
 		self.queue_free()
