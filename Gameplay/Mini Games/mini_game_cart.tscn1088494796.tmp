@@ -9,6 +9,7 @@
 script = ExtResource("1_niass")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(421, 234)
 texture = ExtResource("1_nkgva")
 
 [node name="Dirt" type="Sprite2D" parent="Sprite2D"]

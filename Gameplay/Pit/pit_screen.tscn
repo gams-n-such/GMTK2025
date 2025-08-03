@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dlokw4rebea3y"]
+[gd_scene load_steps=15 format=3 uid="uid://dlokw4rebea3y"]
 
 [ext_resource type="Script" uid="uid://c1fbh0subxruj" path="res://Gameplay/Pit/pit_screen.gd" id="1_g7xse"]
 [ext_resource type="Texture2D" uid="uid://bx7u5r08ltes1" path="res://Gameplay/Pit/Assets/Pit.svg" id="2_4atwr"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cvw21oyrmqi03" path="res://Gameplay/Pit/Assets/Pit_cart.svg" id="6_7ojvr"]
 [ext_resource type="Texture2D" uid="uid://bsgmc8ensr1jb" path="res://Gameplay/Pit/Assets/Pit_connector.svg" id="7_blpmt"]
 [ext_resource type="Texture2D" uid="uid://0u6e7avfb1vc" path="res://Gameplay/Pit/Assets/Pit_rider.svg" id="8_4wqjm"]
+[ext_resource type="PackedScene" uid="uid://qex5u2pf4lvr" path="res://Gameplay/Mini Games/mini_game_cart.tscn" id="9_5awgl"]
 [ext_resource type="Texture2D" uid="uid://cv664twvrwi7b" path="res://Gameplay/Pit/Assets/Pit_wheel.svg" id="11_r4gk1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b3wu3"]
@@ -80,7 +81,7 @@ polygon = PackedVector2Array(-212.317, 218.392, -201.317, 221.392, -193.317, 220
 
 [node name="StartGameBtn3" parent="Pit" instance=ExtResource("3_4atwr")]
 position = Vector2(180, 89)
-mini_game = ExtResource("5_b3wu3")
+mini_game = ExtResource("9_5awgl")
 part = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="Pit/StartGameBtn3"]
