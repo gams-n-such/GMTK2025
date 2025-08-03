@@ -28,4 +28,8 @@ position = Vector2(71, -94)
 unique_name_in_owner = true
 position = Vector2(-268, 117)
 
+[node name="CluePos" type="Node2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-380, -206)
+
 [connection signal="area_entered" from="FoodReciever" to="." method="_on_food_reciever_area_entered"]
