@@ -43,40 +43,33 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -59.0
-offset_top = -134.0
-offset_right = 203.0
-offset_bottom = -44.0
+offset_left = 266.0
+offset_top = -140.0
+offset_right = 528.0
+offset_bottom = -50.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 32
 text = "Request
 pit-stop"
 
-[node name="Control" type="Control" parent="ScreenSelector/RacingScreen"]
-layout_mode = 2
-anchors_preset = 0
-anchor_right = 1.0
-anchor_bottom = 1.0
-mouse_filter = 2
-
-[node name="Label" type="Label" parent="ScreenSelector/RacingScreen/Control"]
-layout_mode = 2
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 586.0
-offset_top = 440.0
-offset_right = -459.0
-offset_bottom = -157.0
-text = "10 дм/с"
-
 [node name="RacerStatus" parent="ScreenSelector/RacingScreen" instance=ExtResource("4_uueue")]
 layout_mode = 1
-offset_left = 73.0
-offset_top = 401.0
-offset_right = -560.0
-offset_bottom = 45.0
+offset_left = 394.0
+offset_top = 411.0
+offset_right = -276.0
+offset_bottom = 34.0
 scale = Vector2(0.775, 0.775)
+
+[node name="Label" type="Label" parent="ScreenSelector/RacingScreen"]
+layout_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 911.0
+offset_top = 434.0
+offset_right = -134.0
+offset_bottom = -163.0
+text = "10 дм/с"
 
 [node name="PitScreen" type="Control" parent="ScreenSelector"]
 unique_name_in_owner = true

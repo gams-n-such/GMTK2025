@@ -23,13 +23,13 @@ process_mode = 4
 [node name="UI" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
 
+[node name="GameplayUI" parent="UI" instance=ExtResource("4_oxb2p")]
+unique_name_in_owner = true
+
 [node name="Scoreboard" parent="UI" instance=ExtResource("7_y1ihq")]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(50, 50)
-offset_left = 346.0
-offset_top = 99.0
-offset_right = 396.0
-offset_bottom = 149.0
-
-[node name="GameplayUI" parent="UI" instance=ExtResource("4_oxb2p")]
-unique_name_in_owner = true
+offset_left = -508.0
+offset_top = 95.0
+offset_right = -458.0
+offset_bottom = 145.0

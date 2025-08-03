@@ -6,5 +6,5 @@
 script = ExtResource("1_5ljsj")
 track_length = 100.0
 pit_track_length = 10.0
-pit_track_speed = 2.0
+pit_track_speed = 4.0
 metadata/_custom_type_script = "uid://dlq0x4c4ee1ka"
