@@ -87,6 +87,7 @@ func start_race() -> void:
 func on_racer_lap_finished(racer: Racer, lap_number: int) -> void:
 	if lap_number == config.num_laps:
 		racer.current_state = racer.RacerState.RACE_END
+		racer.current_lap_distance = 10 - racers.find(racer)
 	
 	if lap_number == config.num_laps and racer == Game.player:
 		end_race()
@@ -103,15 +104,8 @@ func end_race() -> void:
 	%UI.add_child(game_over_screen)
 
 func get_player_position_on_track() -> int:
-	return racers.reduce(func(accum: int, racer: Racer) -> int:
-		if Game.player == racer:
-			return accum + 1
-		
-		var overall_player_distance: float = Game.player.current_lap * Game.race.track.length + Game.player.current_lap_distance
-		var overall_racer_distance: float = racer.current_lap * Game.race.track.length + racer.current_lap_distance
-		
-		return accum + 1 if overall_racer_distance > overall_player_distance else accum
-	, 0)
+	sort_racers()
+	return racers.find(Game.player) + 1
 
 func sort_racers() -> void:
 	racers.sort_custom(func(left: Racer, right: Racer) -> bool:

@@ -84,7 +84,7 @@ shape = SubResource("CircleShape2D_a6sys")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BG/Lynch"]
 position = Vector2(-1.87334, 0.700415)
 rotation = 3.49939
-polygon = PackedVector2Array(-5, 66, 12, 69, 13, -69, -14, -69)
+polygon = PackedVector2Array(-28.7226, 96.5195, 31.7776, 92.9526, 34.0698, -91.8926, -42.9009, -85.9332)
 
 [node name="Sprite2D" type="Sprite2D" parent="BG"]
 modulate = Color(1, 1, 1, 0.388235)
