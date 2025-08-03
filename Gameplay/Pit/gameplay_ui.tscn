@@ -24,10 +24,10 @@ script = ExtResource("1_tnax6")
 
 [node name="RacerStatus" parent="." instance=ExtResource("4_uueue")]
 layout_mode = 1
-offset_left = 394.0
-offset_top = 411.0
-offset_right = -276.0
-offset_bottom = 34.0
+offset_left = 379.0
+offset_top = 418.0
+offset_right = -291.0
+offset_bottom = 41.0
 scale = Vector2(0.775, 0.775)
 
 [node name="Speed" type="Label" parent="."]
@@ -35,11 +35,22 @@ unique_name_in_owner = true
 layout_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 911.0
-offset_top = 434.0
-offset_right = -134.0
-offset_bottom = -163.0
+offset_left = 906.0
+offset_top = 414.0
+offset_right = -139.0
+offset_bottom = -183.0
 text = "10 дм/с"
+
+[node name="Loops" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 927.0
+offset_top = 469.0
+offset_right = -153.0
+offset_bottom = -137.0
+text = "9/20"
 
 [node name="ScreenSelector" type="TabContainer" parent="."]
 unique_name_in_owner = true
@@ -66,10 +77,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 266.0
-offset_top = -140.0
-offset_right = 528.0
-offset_bottom = -50.0
+offset_left = 262.745
+offset_top = -108.55
+offset_right = 524.745
+offset_bottom = -18.55
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 32
@@ -126,10 +137,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 266.0
-offset_top = -140.0
-offset_right = 528.0
-offset_bottom = -50.0
+offset_left = 260.745
+offset_top = -108.55
+offset_right = 522.745
+offset_bottom = -18.55
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 32
@@ -139,10 +150,10 @@ pit-stop"
 [node name="Scoreboard" parent="." instance=ExtResource("7_ryslv")]
 unique_name_in_owner = true
 layout_mode = 1
-offset_left = -512.245
-offset_top = 95.835
-offset_right = -512.245
-offset_bottom = 95.835
+offset_left = -553.0
+offset_top = 96.0
+offset_right = -553.0
+offset_bottom = 96.0
 scale = Vector2(0.8, 0.7)
 
 [connection signal="pressed" from="ScreenSelector/RacingScreen/PitStartButton" to="." method="_on_pit_start_button_pressed"]

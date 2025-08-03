@@ -47,4 +47,4 @@ var part_names : Dictionary[Enum.RACER_PART, String] = {
 
 func update_visuals() -> void:
 	self_modulate = gradient.sample(part.durability.percent)
-	%DurabilityLabel.text = "%s: %s" % [part_names[part_type], int(durability)]
+	%DurabilityLabel.text = "%d" % int(durability) + "%"

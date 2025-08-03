@@ -10,6 +10,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	var speed = maxf(Game.player.speed * Game.player.decay_factor, Game.player.limp_speed)
 	%Speed.text = "%d dm/s" %speed
+	%Loops.text = "%d/%d" %[Game.player.current_lap, Game.race.config.num_laps]
 	Game.race.sort_racers()
 	%Scoreboard.update(Game.race.racers)
 
