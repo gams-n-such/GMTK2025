@@ -1,24 +1,27 @@
-[gd_scene load_steps=3 format=3 uid="uid://c6lowmpiueuwc"]
+[gd_scene load_steps=4 format=3 uid="uid://c6lowmpiueuwc"]
 
 [ext_resource type="Script" uid="uid://n2gg64sxefcg" path="res://Gameplay/Race/racer.gd" id="1_k27c1"]
 [ext_resource type="PackedScene" uid="uid://bsoo7lan3nkb4" path="res://Gameplay/Racer/racer_part.tscn" id="2_e3pu7"]
+[ext_resource type="Texture2D" uid="uid://isut76y8oc7v" path="res://UI/Icons/Racer.svg" id="2_le6cy"]
 
 [node name="Racer" type="PathFollow2D"]
 rotates = false
 script = ExtResource("1_k27c1")
 
-[node name="TempVisual" type="ColorRect" parent="."]
+[node name="Icon" type="TextureRect" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -10.0
-offset_top = -10.0
-offset_right = 10.0
-offset_bottom = 10.0
+offset_left = -22.0
+offset_top = -17.0
+offset_right = 67.0
+offset_bottom = 52.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_le6cy")
 
 [node name="Parts" type="Node" parent="."]
 unique_name_in_owner = true

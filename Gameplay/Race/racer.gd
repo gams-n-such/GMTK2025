@@ -88,8 +88,7 @@ func is_on_pit_stop() -> bool:
 
 func _ready() -> void:
 	assert(config != null)
-	# HACK: use sprite
-	$TempVisual.color = id.color
+	$Icon.self_modulate = id.color
 	init_parts()
 	pass
 
